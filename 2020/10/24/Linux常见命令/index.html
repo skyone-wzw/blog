@@ -78,31 +78,31 @@ pwd（英文：print work directo,">
 <li><strong>rm</strong>（英文：remove）: 移除文件或目录</li>
 <li><strong>mv</strong>（英文：move file）: 移动文件与目录，或修改文件与目录的名称</li>
 </ul>
-<h4 id="ls-列出目录及文件名"><a href="#ls-列出目录及文件名" class="headerlink" title="ls 列出目录及文件名"></a>ls 列出目录及文件名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ ls [目录]</span><br></pre></td></tr></table></figure>
+<h3 id="ls-列出目录及文件名"><a href="#ls-列出目录及文件名" class="headerlink" title="ls 列出目录及文件名"></a>ls 列出目录及文件名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ ls [目录]</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-a    列出全部的文件，包含隐藏文件( 开头为 . 的文件) (常用)</li>
 <li>-d    仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
 <li>-r    列出包含文件的属性与权限等等数据(常用)</li>
 </ul>
-<h4 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ cd [相对或绝对目录]</span><br></pre></td></tr></table></figure>
-<h4 id="pwd-显示当前所在的目录"><a href="#pwd-显示当前所在的目录" class="headerlink" title="pwd 显示当前所在的目录"></a>pwd 显示当前所在的目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ pwd [-P]</span><br></pre></td></tr></table></figure>
+<h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ cd [相对或绝对目录]</span><br></pre></td></tr></table></figure>
+<h3 id="pwd-显示当前所在的目录"><a href="#pwd-显示当前所在的目录" class="headerlink" title="pwd 显示当前所在的目录"></a>pwd 显示当前所在的目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ pwd [-P]</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-P    显示出确实的路径，而非连结 (link) 路径</li>
 </ul>
-<h4 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir 创建新目录"></a>mkdir 创建新目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ mkdir [-mp] 目录名称</span><br></pre></td></tr></table></figure>
+<h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir 创建新目录"></a>mkdir 创建新目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ mkdir [-mp] 目录名称</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-m    配置文件的权限</li>
 <li>-p    直接将所需要的目录(包含上一级目录)递归创建起来</li>
 </ul>
-<h4 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir 删除空的目录"></a>rmdir 删除空的目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ rmdir [-p] 目录</span><br></pre></td></tr></table></figure>
+<h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir 删除空的目录"></a>rmdir 删除空的目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ rmdir [-p] 目录</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-p    连同上一级<strong>空目录</strong>也一起删除</li>
 </ul>
-<h4 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp 复制文件或目录"></a>cp 复制文件或目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ cp source destination</span><br></pre></td></tr></table></figure>
+<h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp 复制文件或目录"></a>cp 复制文件或目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ cp source destination</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-a    相当于 -pdr </li>
@@ -115,14 +115,14 @@ pwd（英文：print work directo,">
 <li>-s    复制成为符号连结档 (symbolic link)，亦即<strong>捷径文件</strong></li>
 <li>-u    若 destination 比 source 旧才升级 destination </li>
 </ul>
-<h4 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm 移除文件或目录"></a>rm 移除文件或目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ rm [-fir] 文件或目录</span><br></pre></td></tr></table></figure>
+<h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm 移除文件或目录"></a>rm 移除文件或目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ rm [-fir] 文件或目录</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-f    忽略不存在的文件，不会出现警告信息</li>
 <li>-i    删除前会询问是否执行</li>
 <li>-r    递归删除，常用于删除目录。<strong>这是非常危险的选项！！！</strong></li>
 </ul>
-<h4 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv 移动文件与目录，或修改名称"></a>mv 移动文件与目录，或修改名称</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ mv [-fiu] source destination</span><br><span class="line">user@wzw:~$ mv [-fiu] source1 source2 source3 .... directory</span><br></pre></td></tr></table></figure>
+<h3 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv 移动文件与目录，或修改名称"></a>mv 移动文件与目录，或修改名称</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user@wzw:~$ mv [-fiu] source destination</span><br><span class="line">user@wzw:~$ mv [-fiu] source1 source2 source3 .... directory</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-f     如果目标文件已经存在，不会询问而直接覆盖</li>
@@ -138,7 +138,7 @@ pwd（英文：print work directo,">
 <li><strong>head</strong> 只看头几行</li>
 <li><strong>tail</strong> 只看尾巴几行</li>
 </ul>
-<h4 id="cat-从第一行开始显示文件内容"><a href="#cat-从第一行开始显示文件内容" class="headerlink" title="cat 从第一行开始显示文件内容"></a>cat 从第一行开始显示文件内容</h4><p>参数：</p>
+<h3 id="cat-从第一行开始显示文件内容"><a href="#cat-从第一行开始显示文件内容" class="headerlink" title="cat 从第一行开始显示文件内容"></a>cat 从第一行开始显示文件内容</h3><p>参数：</p>
 <ul>
 <li>-A     相当于 -vET</li>
 <li>-b     列出行号，仅针对非空白行做行号显示，空白行不标行号</li>
@@ -147,13 +147,13 @@ pwd（英文：print work directo,">
 <li>-T     [tab] 键以 ^I 显示</li>
 <li>-v     列出一些看不出来的特殊字符</li>
 </ul>
-<h4 id="tac-从最后一行行开始显示文件内容"><a href="#tac-从最后一行行开始显示文件内容" class="headerlink" title="tac 从最后一行行开始显示文件内容"></a>tac 从最后一行行开始显示文件内容</h4><p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写。</p>
-<h4 id="nl-显示行号"><a href="#nl-显示行号" class="headerlink" title="nl 显示行号"></a>nl 显示行号</h4><ul>
+<h3 id="tac-从最后一行行开始显示文件内容"><a href="#tac-从最后一行行开始显示文件内容" class="headerlink" title="tac 从最后一行行开始显示文件内容"></a>tac 从最后一行行开始显示文件内容</h3><p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写。</p>
+<h3 id="nl-显示行号"><a href="#nl-显示行号" class="headerlink" title="nl 显示行号"></a>nl 显示行号</h3><ul>
 <li>-b ：指定行号指定的方式，主要有两种：<br>-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)<br>-b t ：如果有空行，空的那一行不要列出行号(默认值)</li>
 <li>-n ：列出行号表示的方法，主要有三种：<br>-n ln ：行号在荧幕的最左方显示；<br>-n rn ：行号在自己栏位的最右方显示，且不加 0<br>-n rz ：行号在自己栏位的最右方显示，且加 0</li>
 <li>-w ：行号栏位的占用的位数。</li>
 </ul>
-<h4 id="more-一页一页翻动"><a href="#more-一页一页翻动" class="headerlink" title="more 一页一页翻动"></a>more 一页一页翻动</h4><p>打开文件后，可以按：</p>
+<h3 id="more-一页一页翻动"><a href="#more-一页一页翻动" class="headerlink" title="more 一页一页翻动"></a>more 一页一页翻动</h3><p>打开文件后，可以按：</p>
 <ul>
 <li>空白键 (space)：代表向下翻一页；</li>
 <li>Enter     ：代表向下翻『一行』；</li>
@@ -162,7 +162,7 @@ pwd（英文：print work directo,">
 <li>q       ：代表立刻离开 more ，不再显示该文件内容。</li>
 <li>b 或 [ctrl]-b ：代表往回翻页，只对文件有用。</li>
 </ul>
-<h4 id="less-一页一页翻动"><a href="#less-一页一页翻动" class="headerlink" title="less 一页一页翻动"></a>less 一页一页翻动</h4><p>打开文件后，可以按：</p>
+<h3 id="less-一页一页翻动"><a href="#less-一页一页翻动" class="headerlink" title="less 一页一页翻动"></a>less 一页一页翻动</h3><p>打开文件后，可以按：</p>
 <ul>
 <li>空白键  ：向下翻动一页；</li>
 <li>[pagedown]：向下翻动一页；</li>
@@ -173,11 +173,11 @@ pwd（英文：print work directo,">
 <li>N     ：反向的重复前一个搜寻 (与 / 或 ? 有关！)</li>
 <li>q     ：离开 less 这个程序；</li>
 </ul>
-<h4 id="head-显示文件前面几行"><a href="#head-显示文件前面几行" class="headerlink" title="head 显示文件前面几行"></a>head 显示文件前面几行</h4><p>参数：</p>
+<h3 id="head-显示文件前面几行"><a href="#head-显示文件前面几行" class="headerlink" title="head 显示文件前面几行"></a>head 显示文件前面几行</h3><p>参数：</p>
 <ul>
 <li>-n ：后面接数字，代表显示几行</li>
 </ul>
-<h4 id="tail-显示文件后面几行"><a href="#tail-显示文件后面几行" class="headerlink" title="tail 显示文件后面几行"></a>tail 显示文件后面几行</h4><p>参数</p>
+<h3 id="tail-显示文件后面几行"><a href="#tail-显示文件后面几行" class="headerlink" title="tail 显示文件后面几行"></a>tail 显示文件后面几行</h3><p>参数</p>
 <ul>
 <li>-n ：后面接数字，代表显示几行</li>
 <li>-f ：持续侦测后面所接的档名，按下[ctrl]-c才会结束侦测</li>
@@ -205,10 +205,10 @@ pwd（英文：print work directo,">
     <div id='gitalk-container' class="comment link"
 		data-enable='false'
         data-ae='true'
-        data-ci=''
-        data-cs=''
+        data-ci='8ad42ac3f4f8e27b7854'
+        data-cs='8e51137e8771272eece8e5c738fdf47a3da5f0c8'
         data-r='blog-gitalk'
-        data-o='skyone-wzw'
+        data-o='skyone-proof'
         data-a='skyone-wzw'
         data-d='false'
     >查看评论</div>
@@ -217,7 +217,7 @@ pwd（英文：print work directo,">
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">一.文件与目录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%E5%8F%8A%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">ls 列出目录及文件名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">cd 切换目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">pwd 显示当前所在的目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">mkdir 创建新目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">rmdir 删除空的目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">cp 复制文件或目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">rm 移除文件或目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%88%96%E4%BF%AE%E6%94%B9%E5%90%8D%E7%A7%B0"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">mv 移动文件与目录，或修改名称</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.</span> <span class="toc-text">二.查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cat-%E4%BB%8E%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%BC%80%E5%A7%8B%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">cat 从第一行开始显示文件内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tac-%E4%BB%8E%E6%9C%80%E5%90%8E%E4%B8%80%E8%A1%8C%E8%A1%8C%E5%BC%80%E5%A7%8B%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">tac 从最后一行行开始显示文件内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nl-%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">nl 显示行号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#more-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E7%BF%BB%E5%8A%A8"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">more 一页一页翻动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E7%BF%BB%E5%8A%A8"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">less 一页一页翻动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%89%8D%E9%9D%A2%E5%87%A0%E8%A1%8C"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">head 显示文件前面几行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tail-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%90%8E%E9%9D%A2%E5%87%A0%E8%A1%8C"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">tail 显示文件后面几行</span></a></li></ol></li></ol></li></ol></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">一.文件与目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%E5%8F%8A%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">ls 列出目录及文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">cd 切换目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">pwd 显示当前所在的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.4.</span> <span class="toc-text">mkdir 创建新目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.5.</span> <span class="toc-text">rmdir 删除空的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.6.</span> <span class="toc-text">cp 复制文件或目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.7.</span> <span class="toc-text">rm 移除文件或目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%88%96%E4%BF%AE%E6%94%B9%E5%90%8D%E7%A7%B0"><span class="toc-number">1.1.8.</span> <span class="toc-text">mv 移动文件与目录，或修改名称</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.</span> <span class="toc-text">二.查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat-%E4%BB%8E%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%BC%80%E5%A7%8B%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.1.</span> <span class="toc-text">cat 从第一行开始显示文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tac-%E4%BB%8E%E6%9C%80%E5%90%8E%E4%B8%80%E8%A1%8C%E8%A1%8C%E5%BC%80%E5%A7%8B%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">tac 从最后一行行开始显示文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nl-%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7"><span class="toc-number">1.2.3.</span> <span class="toc-text">nl 显示行号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E7%BF%BB%E5%8A%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text">more 一页一页翻动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E7%BF%BB%E5%8A%A8"><span class="toc-number">1.2.5.</span> <span class="toc-text">less 一页一页翻动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%89%8D%E9%9D%A2%E5%87%A0%E8%A1%8C"><span class="toc-number">1.2.6.</span> <span class="toc-text">head 显示文件前面几行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tail-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%90%8E%E9%9D%A2%E5%87%A0%E8%A1%8C"><span class="toc-number">1.2.7.</span> <span class="toc-text">tail 显示文件后面几行</span></a></li></ol></li></ol></li></ol>	
         </div>
     
 </div>

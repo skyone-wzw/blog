@@ -13,31 +13,31 @@
 <li><strong>rm</strong>（英文：remove）: 移除文件或目录</li>
 <li><strong>mv</strong>（英文：move file）: 移动文件与目录，或修改文件与目录的名称</li>
 </ul>
-<h4 id="ls-列出目录及文件名"><a href="#ls-列出目录及文件名" class="headerlink" title="ls 列出目录及文件名"></a>ls 列出目录及文件名</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ ls [目录]</span><br></pre></td></tr></table></figure>
+<h3 id="ls-列出目录及文件名"><a href="#ls-列出目录及文件名" class="headerlink" title="ls 列出目录及文件名"></a>ls 列出目录及文件名</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ ls [目录]</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-a    列出全部的文件，包含隐藏文件( 开头为 . 的文件) (常用)</li>
 <li>-d    仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
 <li>-r    列出包含文件的属性与权限等等数据(常用)</li>
 </ul>
-<h4 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ cd [相对或绝对目录]</span><br></pre></td></tr></table></figure>
-<h4 id="pwd-显示当前所在的目录"><a href="#pwd-显示当前所在的目录" class="headerlink" title="pwd 显示当前所在的目录"></a>pwd 显示当前所在的目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ pwd [-P]</span><br></pre></td></tr></table></figure>
+<h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ cd [相对或绝对目录]</span><br></pre></td></tr></table></figure>
+<h3 id="pwd-显示当前所在的目录"><a href="#pwd-显示当前所在的目录" class="headerlink" title="pwd 显示当前所在的目录"></a>pwd 显示当前所在的目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ pwd [-P]</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-P    显示出确实的路径，而非连结 (link) 路径</li>
 </ul>
-<h4 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir 创建新目录"></a>mkdir 创建新目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ mkdir [-mp] 目录名称</span><br></pre></td></tr></table></figure>
+<h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir 创建新目录"></a>mkdir 创建新目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ mkdir [-mp] 目录名称</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-m    配置文件的权限</li>
 <li>-p    直接将所需要的目录(包含上一级目录)递归创建起来</li>
 </ul>
-<h4 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir 删除空的目录"></a>rmdir 删除空的目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ rmdir [-p] 目录</span><br></pre></td></tr></table></figure>
+<h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir 删除空的目录"></a>rmdir 删除空的目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ rmdir [-p] 目录</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-p    连同上一级<strong>空目录</strong>也一起删除</li>
 </ul>
-<h4 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp 复制文件或目录"></a>cp 复制文件或目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ cp source destination</span><br></pre></td></tr></table></figure>
+<h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp 复制文件或目录"></a>cp 复制文件或目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ cp source destination</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-a    相当于 -pdr </li>
@@ -50,14 +50,14 @@
 <li>-s    复制成为符号连结档 (symbolic link)，亦即<strong>捷径文件</strong></li>
 <li>-u    若 destination 比 source 旧才升级 destination </li>
 </ul>
-<h4 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm 移除文件或目录"></a>rm 移除文件或目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ rm [-fir] 文件或目录</span><br></pre></td></tr></table></figure>
+<h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm 移除文件或目录"></a>rm 移除文件或目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ rm [-fir] 文件或目录</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-f    忽略不存在的文件，不会出现警告信息</li>
 <li>-i    删除前会询问是否执行</li>
 <li>-r    递归删除，常用于删除目录。<strong>这是非常危险的选项！！！</strong></li>
 </ul>
-<h4 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv 移动文件与目录，或修改名称"></a>mv 移动文件与目录，或修改名称</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ mv [-fiu] source destination</span><br><span class="line">user@wzw:~$ mv [-fiu] source1 source2 source3 .... directory</span><br></pre></td></tr></table></figure>
+<h3 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv 移动文件与目录，或修改名称"></a>mv 移动文件与目录，或修改名称</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user@wzw:~$ mv [-fiu] source destination</span><br><span class="line">user@wzw:~$ mv [-fiu] source1 source2 source3 .... directory</span><br></pre></td></tr></table></figure>
 <p>参数：</p>
 <ul>
 <li>-f     如果目标文件已经存在，不会询问而直接覆盖</li>
@@ -73,7 +73,7 @@
 <li><strong>head</strong> 只看头几行</li>
 <li><strong>tail</strong> 只看尾巴几行</li>
 </ul>
-<h4 id="cat-从第一行开始显示文件内容"><a href="#cat-从第一行开始显示文件内容" class="headerlink" title="cat 从第一行开始显示文件内容"></a>cat 从第一行开始显示文件内容</h4><p>参数：</p>
+<h3 id="cat-从第一行开始显示文件内容"><a href="#cat-从第一行开始显示文件内容" class="headerlink" title="cat 从第一行开始显示文件内容"></a>cat 从第一行开始显示文件内容</h3><p>参数：</p>
 <ul>
 <li>-A     相当于 -vET</li>
 <li>-b     列出行号，仅针对非空白行做行号显示，空白行不标行号</li>
@@ -82,13 +82,13 @@
 <li>-T     [tab] 键以 ^I 显示</li>
 <li>-v     列出一些看不出来的特殊字符</li>
 </ul>
-<h4 id="tac-从最后一行行开始显示文件内容"><a href="#tac-从最后一行行开始显示文件内容" class="headerlink" title="tac 从最后一行行开始显示文件内容"></a>tac 从最后一行行开始显示文件内容</h4><p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写。</p>
-<h4 id="nl-显示行号"><a href="#nl-显示行号" class="headerlink" title="nl 显示行号"></a>nl 显示行号</h4><ul>
+<h3 id="tac-从最后一行行开始显示文件内容"><a href="#tac-从最后一行行开始显示文件内容" class="headerlink" title="tac 从最后一行行开始显示文件内容"></a>tac 从最后一行行开始显示文件内容</h3><p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写。</p>
+<h3 id="nl-显示行号"><a href="#nl-显示行号" class="headerlink" title="nl 显示行号"></a>nl 显示行号</h3><ul>
 <li>-b ：指定行号指定的方式，主要有两种：<br>-b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)<br>-b t ：如果有空行，空的那一行不要列出行号(默认值)</li>
 <li>-n ：列出行号表示的方法，主要有三种：<br>-n ln ：行号在荧幕的最左方显示；<br>-n rn ：行号在自己栏位的最右方显示，且不加 0<br>-n rz ：行号在自己栏位的最右方显示，且加 0</li>
 <li>-w ：行号栏位的占用的位数。</li>
 </ul>
-<h4 id="more-一页一页翻动"><a href="#more-一页一页翻动" class="headerlink" title="more 一页一页翻动"></a>more 一页一页翻动</h4><p>打开文件后，可以按：</p>
+<h3 id="more-一页一页翻动"><a href="#more-一页一页翻动" class="headerlink" title="more 一页一页翻动"></a>more 一页一页翻动</h3><p>打开文件后，可以按：</p>
 <ul>
 <li>空白键 (space)：代表向下翻一页；</li>
 <li>Enter     ：代表向下翻『一行』；</li>
@@ -97,7 +97,7 @@
 <li>q       ：代表立刻离开 more ，不再显示该文件内容。</li>
 <li>b 或 [ctrl]-b ：代表往回翻页，只对文件有用。</li>
 </ul>
-<h4 id="less-一页一页翻动"><a href="#less-一页一页翻动" class="headerlink" title="less 一页一页翻动"></a>less 一页一页翻动</h4><p>打开文件后，可以按：</p>
+<h3 id="less-一页一页翻动"><a href="#less-一页一页翻动" class="headerlink" title="less 一页一页翻动"></a>less 一页一页翻动</h3><p>打开文件后，可以按：</p>
 <ul>
 <li>空白键  ：向下翻动一页；</li>
 <li>[pagedown]：向下翻动一页；</li>
@@ -108,11 +108,11 @@
 <li>N     ：反向的重复前一个搜寻 (与 / 或 ? 有关！)</li>
 <li>q     ：离开 less 这个程序；</li>
 </ul>
-<h4 id="head-显示文件前面几行"><a href="#head-显示文件前面几行" class="headerlink" title="head 显示文件前面几行"></a>head 显示文件前面几行</h4><p>参数：</p>
+<h3 id="head-显示文件前面几行"><a href="#head-显示文件前面几行" class="headerlink" title="head 显示文件前面几行"></a>head 显示文件前面几行</h3><p>参数：</p>
 <ul>
 <li>-n ：后面接数字，代表显示几行</li>
 </ul>
-<h4 id="tail-显示文件后面几行"><a href="#tail-显示文件后面几行" class="headerlink" title="tail 显示文件后面几行"></a>tail 显示文件后面几行</h4><p>参数</p>
+<h3 id="tail-显示文件后面几行"><a href="#tail-显示文件后面几行" class="headerlink" title="tail 显示文件后面几行"></a>tail 显示文件后面几行</h3><p>参数</p>
 <ul>
 <li>-n ：后面接数字，代表显示几行</li>
 <li>-f ：持续侦测后面所接的档名，按下[ctrl]-c才会结束侦测</li>
@@ -178,7 +178,13 @@
     <url>/2020/11/14/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/</url>
     <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>这是一个基于python的最简单的神经网络框架，使用了<code>numpy</code>库，使用的是输入层 - 隐藏层 - 输出层的结构，每一层的节点数自可定义。原理图：</p>
 <p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png" alt="原理图"></p>
-<p>激活函数是经典的：<br>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$<br>误差函数的斜率：<br>$$<br>\frac{dE}{dW_{j,k}}=-(t_k-o_k)\cdot sigmoid(\sum_j{w_{j,k}\cdot o_j})(1-sigmoid(\sum_j{w_{j,k}\cdot o_j}))\cdot o_j<br>$$<br>使用矩阵简化运算：<br>$$<br>\Delta W_{j,k}=\alpha\cdot E_k\cdot O_k(1-O_k)\cdot O_j^T<br>$$<br>代码很短、很简单，但效果却还不错。</p>
+<p>激活函数是经典的：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png" alt="激活函数"></p>
+<p>误差函数的斜率：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%AF%E5%B7%AE%E5%87%BD%E6%95%B0.png" alt="误差函数"></p>
+<p>使用矩阵简化运算：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" alt="矩阵运算"></p>
+<p>代码很短、很简单，但效果却还不错。</p>
 <p>输入层、隐藏层、输出层节点数分别784、100、10个，经过<code>MNIST手写数字数据集</code>的训练后，跑了10000个测试，手写数字识别准确率达到了95%左右。</p>
 <p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%86%E5%88%AB%E5%87%86%E7%A1%AE%E7%8E%87.png" alt="识别准确率"></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">activate</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + numpy.exp(-x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetwork</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, inputnodes, hiddennodes, outputnodes, learningrate=<span class="number">0.3</span></span>):</span></span><br><span class="line">        <span class="comment"># set number of nodes in each input, hidden, output layer</span></span><br><span class="line">        <span class="comment"># 分别是：输入层、隐藏层、输出层的节点数</span></span><br><span class="line">        self.inodes = inputnodes</span><br><span class="line">        self.hnodes = hiddennodes</span><br><span class="line">        self.onodes = outputnodes</span><br><span class="line"></span><br><span class="line">        <span class="comment"># learning rate</span></span><br><span class="line">        <span class="comment"># 学习速率</span></span><br><span class="line">        self.lr = learningrate</span><br><span class="line"></span><br><span class="line">        <span class="comment"># weights</span></span><br><span class="line">        <span class="comment"># 使用正态分布初始化权重</span></span><br><span class="line">        self.wih = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.inodes, -<span class="number">0.5</span>), (self.hnodes, self.inodes))</span><br><span class="line">        self.who = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.hnodes, -<span class="number">0.5</span>), (self.onodes, self.hnodes))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self, inputs_list</span>):</span></span><br><span class="line">        <span class="comment"># 计算每个数字的概率</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 翻转矩阵</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">		<span class="comment"># 输入进隐藏层的数据与权重相乘</span></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line">		<span class="comment"># 输入进输出层的数据与权重相乘</span></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> final_outputs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self, inputs_list, targets_list</span>):</span></span><br><span class="line">        <span class="comment"># 误差计算函数</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">        targets = numpy.array(targets_list, ndmin=<span class="number">2</span>).T</span><br><span class="line"></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line"></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># errors</span></span><br><span class="line">        <span class="comment"># 误差值</span></span><br><span class="line">        output_errors = targets - final_outputs</span><br><span class="line">        hidden_errors = numpy.dot(self.who.T, output_errors)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.who += self.lr * numpy.dot((output_errors * final_outputs * (<span class="number">1.0</span> - final_outputs)), numpy.transpose(hidden_outputs))</span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (<span class="number">1.0</span> - hidden_outputs)), numpy.transpose(inputs))</span><br></pre></td></tr></table></figure>
@@ -189,6 +195,64 @@
       <tags>
         <tag>Python</tag>
         <tag>神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>课程表爬虫-未完待续</title>
+    <url>/2020/10/29/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/</url>
+    <content><![CDATA[<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li><strong>总体思路</strong></li>
+<li><strong>网站分析</strong><ol>
+<li><strong>登录web系统</strong></li>
+<li><strong>登录教务系统</strong></li>
+<li><strong>获取课表</strong></li>
+</ol>
+</li>
+<li><strong>开始写代码</strong></li>
+</ol>
+<h2 id="1-总体思路"><a href="#1-总体思路" class="headerlink" title="1.总体思路"></a>1.总体思路</h2><p>由于查合工大课表需要连接校园网，要实现随时随地爬取课表需要借助学校提供的web***系统。</p>
+<p>因此这个爬虫需要两次模拟登录。</p>
+<p>第一次是登录<a href="https://webvpn.hfut.edu.cn/login">web***</a></p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/web1.png" alt="web1"></p>
+<p>第二次是通过web***打开教务系统学生端</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/web2.png" alt="web2"></p>
+<h2 id="2-网站分析"><a href="#2-网站分析" class="headerlink" title="2.网站分析"></a>2.网站分析</h2><h3 id="登录web系统"><a href="#登录web系统" class="headerlink" title="登录web系统"></a>登录web系统</h3><p>首先用浏览器抓包</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/s1.png" alt="s1"></p>
+<p>do-login是一个post请求，data段很简单，用户名和密码都没有加密，但在此之前需要先获取一个captcha_id，直接请求就行了</p>
+<p>后面的info是一个get请求，很明显用于获取信息，禁止JavaScript再打开网页，果然，这个网页是JavaScript动态加载的，info就是用于获取信息，还是不放心？再翻一翻JavaScript，很容易就找到了这个</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/s2.png" alt="s2"></p>
+<p>这下没错了，由于教务系统网址每次都不一样，我们想要通过web***打开它只能通过发送一个叫</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">info?_&#x3D;xxxxxxxx</span><br></pre></td></tr></table></figure>
+<p> 的get请求获取网址，等于号后面一眼就能看出来是<strong>时间戳</strong></p>
+<h3 id="登录教务系统"><a href="#登录教务系统" class="headerlink" title="登录教务系统"></a>登录教务系统</h3><p>由于web***系统暂时抽风，先连校园网测试</p>
+<p>依然先抓包</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j1.png" alt="j1"></p>
+<p>这就有点意思了，先get了一个login-salt，再post登录用的login，而且login的数据段的密码加密了！</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j2.png" alt="j2"></p>
+<p>只能调试JavaScript了。。。</p>
+<p>经过一番寻找，终于在</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j3.png" alt="j3"></p>
+<p>找到了加密方式：先get一个”盐“，连到密码前面，再用SHA1算法加密</p>
+<p>其实也不算复复杂，毕竟python自带所有hash算法(在hashlib)里，就算没有，也可以把Google的sha1.js复制过来用python调用</p>
+<h3 id="获取课表"><a href="#获取课表" class="headerlink" title="获取课表"></a>获取课表</h3><p>抓包抓包~~~</p>
+<p>发现两个特别的请求：</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get1.png" alt="get1"></p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get2.png" alt="get"></p>
+<p>第一个用于获取加载网页的js，第二个是json信息</p>
+<p>我们只需要那个json信息，直接分析并打开网址即可</p>
+<p>打开网页，抓包</p>
+<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get3.png" alt="get3"></p>
+<p>很简单，看来上面那个网页不用请求，直接获取这个get-data即可，参数就是时间</p>
+<p>至此，分析完成</p>
+<h2 id="3-开始写代码"><a href="#3-开始写代码" class="headerlink" title="3.开始写代码"></a>3.开始写代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> html</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">normal_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN1_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&#x27;*/*&#x27;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Content-Type&quot;</span>: <span class="string">r&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Origin&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/login&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;empty&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;cors&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;X-Requested-With&quot;</span>: <span class="string">r&quot;XMLHttpRequest&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN2_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,&quot;</span></span><br><span class="line">               <span class="string">r&quot;application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/login&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;document&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;navigate&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-User&quot;</span>: <span class="string">r&quot;?1&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN3_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&#x27;application/json, text/javascript, */*; q=0.01&#x27;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;empty&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;cors&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;X-Requested-With&quot;</span>: <span class="string">r&quot;XMLHttpRequest&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN_url = <span class="string">r&#x27;https://webvpn.hfut.edu.cn/&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_captcha_id</span>(<span class="params">page</span>):</span></span><br><span class="line">    xpath = <span class="string">r&#x27;//*[@id=&quot;captcha-wrap&quot;]/div/div/input/@value&#x27;</span></span><br><span class="line">    page.encoding = page.apparent_encoding</span><br><span class="line">    selector = html.fromstring(page.text)</span><br><span class="line">    <span class="keyword">return</span> selector.xpath(xpath)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">VPN_session = requests.Session()</span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">r&#x27;auth_type&#x27;</span>: <span class="string">r&#x27;local&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;username&#x27;</span>: <span class="string">r&#x27;填用户名&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;sms_code&#x27;</span>: <span class="string">r&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;password&#x27;</span>: <span class="string">r&#x27;填密码&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;captcha&#x27;</span>: <span class="string">r&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;needCaptcha&#x27;</span>: <span class="string">r&#x27;false&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;captcha_id&#x27;</span>: get_captcha_id(VPN_session.get(<span class="string">r&#x27;https://webvpn.hfut.edu.cn/login&#x27;</span>, headers=normal_headers))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res0 = VPN_session.post(VPN_url + <span class="string">r&#x27;do-login&#x27;</span>, headers=VPN1_headers, data=data)</span><br><span class="line">res1 = VPN_session.get(VPN_url, headers=VPN2_headers)</span><br><span class="line">res2 = VPN_session.get(VPN_url + <span class="string">r&#x27;user/info?_=&#x27;</span> + <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>)), headers=VPN3_headers)</span><br><span class="line">print(res1)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="目前测试未成功，未完待续"><a href="#目前测试未成功，未完待续" class="headerlink" title="目前测试未成功，未完待续"></a>目前测试未成功，未完待续</h3>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -308,64 +372,6 @@
         <tag>Node.js</tag>
         <tag>JavaScript</tag>
         <tag>Koa</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>课程表爬虫-未完待续</title>
-    <url>/2020/10/29/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/</url>
-    <content><![CDATA[<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
-<li><strong>总体思路</strong></li>
-<li><strong>网站分析</strong><ol>
-<li><strong>登录web系统</strong></li>
-<li><strong>登录教务系统</strong></li>
-<li><strong>获取课表</strong></li>
-</ol>
-</li>
-<li><strong>开始写代码</strong></li>
-</ol>
-<h2 id="1-总体思路"><a href="#1-总体思路" class="headerlink" title="1.总体思路"></a>1.总体思路</h2><p>由于查合工大课表需要连接校园网，要实现随时随地爬取课表需要借助学校提供的web***系统。</p>
-<p>因此这个爬虫需要两次模拟登录。</p>
-<p>第一次是登录<a href="https://webvpn.hfut.edu.cn/login">web***</a></p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/web1.png" alt="web1"></p>
-<p>第二次是通过web***打开教务系统学生端</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/web2.png" alt="web2"></p>
-<h2 id="2-网站分析"><a href="#2-网站分析" class="headerlink" title="2.网站分析"></a>2.网站分析</h2><h3 id="登录web系统"><a href="#登录web系统" class="headerlink" title="登录web系统"></a>登录web系统</h3><p>首先用浏览器抓包</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/s1.png" alt="s1"></p>
-<p>do-login是一个post请求，data段很简单，用户名和密码都没有加密，但在此之前需要先获取一个captcha_id，直接请求就行了</p>
-<p>后面的info是一个get请求，很明显用于获取信息，禁止JavaScript再打开网页，果然，这个网页是JavaScript动态加载的，info就是用于获取信息，还是不放心？再翻一翻JavaScript，很容易就找到了这个</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/s2.png" alt="s2"></p>
-<p>这下没错了，由于教务系统网址每次都不一样，我们想要通过web***打开它只能通过发送一个叫</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">info?_&#x3D;xxxxxxxx</span><br></pre></td></tr></table></figure>
-<p> 的get请求获取网址，等于号后面一眼就能看出来是<strong>时间戳</strong></p>
-<h3 id="登录教务系统"><a href="#登录教务系统" class="headerlink" title="登录教务系统"></a>登录教务系统</h3><p>由于web***系统暂时抽风，先连校园网测试</p>
-<p>依然先抓包</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j1.png" alt="j1"></p>
-<p>这就有点意思了，先get了一个login-salt，再post登录用的login，而且login的数据段的密码加密了！</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j2.png" alt="j2"></p>
-<p>只能调试JavaScript了。。。</p>
-<p>经过一番寻找，终于在</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/j3.png" alt="j3"></p>
-<p>找到了加密方式：先get一个”盐“，连到密码前面，再用SHA1算法加密</p>
-<p>其实也不算复复杂，毕竟python自带所有hash算法(在hashlib)里，就算没有，也可以把Google的sha1.js复制过来用python调用</p>
-<h3 id="获取课表"><a href="#获取课表" class="headerlink" title="获取课表"></a>获取课表</h3><p>抓包抓包~~~</p>
-<p>发现两个特别的请求：</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get1.png" alt="get1"></p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get2.png" alt="get"></p>
-<p>第一个用于获取加载网页的js，第二个是json信息</p>
-<p>我们只需要那个json信息，直接分析并打开网址即可</p>
-<p>打开网页，抓包</p>
-<p><img src="https://tc.skyone.host/blog/post/%E8%AF%BE%E7%A8%8B%E8%A1%A8%E7%88%AC%E8%99%AB-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/get3.png" alt="get3"></p>
-<p>很简单，看来上面那个网页不用请求，直接获取这个get-data即可，参数就是时间</p>
-<p>至此，分析完成</p>
-<h2 id="3-开始写代码"><a href="#3-开始写代码" class="headerlink" title="3.开始写代码"></a>3.开始写代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> html</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">normal_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN1_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&#x27;*/*&#x27;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Content-Type&quot;</span>: <span class="string">r&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Origin&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/login&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;empty&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;cors&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;X-Requested-With&quot;</span>: <span class="string">r&quot;XMLHttpRequest&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN2_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,&quot;</span></span><br><span class="line">               <span class="string">r&quot;application/signed-exchange;v=b3;q=0.9&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/login&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;document&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;navigate&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-User&quot;</span>: <span class="string">r&quot;?1&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Upgrade-Insecure-Requests&quot;</span>: <span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN3_headers = &#123;</span><br><span class="line">    <span class="string">r&quot;Accept&quot;</span>: <span class="string">r&#x27;application/json, text/javascript, */*; q=0.01&#x27;</span>,</span><br><span class="line">    <span class="string">r&quot;Accept-Encoding&quot;</span>: <span class="string">r&quot;gzip, deflate, br&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;User-Agent&quot;</span>: <span class="string">r&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span><br><span class="line">                   <span class="string">r&quot;Chrome/86.0.4240.111 Safari/537.36 Edg/86.0.622.56 &quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Cookie&quot;</span>: <span class="string">r&quot;show_vpn=1; wengine_vpn_ticketwebvpn_hfut_edu_cn=783a9268eeff4127; remember_token=&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Host&quot;</span>: <span class="string">r&quot;webvpn.hfut.edu.cn&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Referer&quot;</span>: <span class="string">r&quot;https://webvpn.hfut.edu.cn/&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Dest&quot;</span>: <span class="string">r&quot;empty&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Mode&quot;</span>: <span class="string">r&quot;cors&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;Sec-Fetch-Site&quot;</span>: <span class="string">r&quot;same-origin&quot;</span>,</span><br><span class="line">    <span class="string">r&quot;X-Requested-With&quot;</span>: <span class="string">r&quot;XMLHttpRequest&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">VPN_url = <span class="string">r&#x27;https://webvpn.hfut.edu.cn/&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_captcha_id</span>(<span class="params">page</span>):</span></span><br><span class="line">    xpath = <span class="string">r&#x27;//*[@id=&quot;captcha-wrap&quot;]/div/div/input/@value&#x27;</span></span><br><span class="line">    page.encoding = page.apparent_encoding</span><br><span class="line">    selector = html.fromstring(page.text)</span><br><span class="line">    <span class="keyword">return</span> selector.xpath(xpath)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">VPN_session = requests.Session()</span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">r&#x27;auth_type&#x27;</span>: <span class="string">r&#x27;local&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;username&#x27;</span>: <span class="string">r&#x27;填用户名&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;sms_code&#x27;</span>: <span class="string">r&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;password&#x27;</span>: <span class="string">r&#x27;填密码&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;captcha&#x27;</span>: <span class="string">r&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;needCaptcha&#x27;</span>: <span class="string">r&#x27;false&#x27;</span>,</span><br><span class="line">    <span class="string">r&#x27;captcha_id&#x27;</span>: get_captcha_id(VPN_session.get(<span class="string">r&#x27;https://webvpn.hfut.edu.cn/login&#x27;</span>, headers=normal_headers))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">res0 = VPN_session.post(VPN_url + <span class="string">r&#x27;do-login&#x27;</span>, headers=VPN1_headers, data=data)</span><br><span class="line">res1 = VPN_session.get(VPN_url, headers=VPN2_headers)</span><br><span class="line">res2 = VPN_session.get(VPN_url + <span class="string">r&#x27;user/info?_=&#x27;</span> + <span class="built_in">str</span>(<span class="built_in">int</span>(time.time() * <span class="number">1000</span>)), headers=VPN3_headers)</span><br><span class="line">print(res1)</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="目前测试未成功，未完待续"><a href="#目前测试未成功，未完待续" class="headerlink" title="目前测试未成功，未完待续"></a>目前测试未成功，未完待续</h3>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
