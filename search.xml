@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android学习笔记之应用资源</title>
+    <url>/2021/01/30/android-xue-xi-bi-ji-zhi-ying-yong-zi-yuan/</url>
+    <content><![CDATA[<h1 id="资源文件的存放位置"><a href="#资源文件的存放位置" class="headerlink" title="资源文件的存放位置"></a>资源文件的存放位置</h1><p>首先来看一下Android工程的目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MyProject&#x2F;</span><br><span class="line">	manifests&#x2F;</span><br><span class="line">		AndroidManifest.xml</span><br><span class="line">    java&#x2F;</span><br><span class="line">    	host.skyone.resource&#x2F;</span><br><span class="line">        	MainActivity.java</span><br><span class="line">    res&#x2F;</span><br><span class="line">        anim&#x2F;</span><br><span class="line">        color&#x2F;</span><br><span class="line">        drawable&#x2F;</span><br><span class="line">            skyone.png</span><br><span class="line">        layout&#x2F;</span><br><span class="line">            activity_main.xml</span><br><span class="line">        menu&#x2F;</span><br><span class="line">        xml&#x2F;</span><br><span class="line">        raw&#x2F;</span><br><span class="line">        mipmap&#x2F;</span><br><span class="line">            icon.png</span><br><span class="line">        values&#x2F;</span><br><span class="line">            strings.xml</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">目录</th>
+<th align="left">资源类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>anim/</code></td>
+<td align="left">定义动画属性的XML文件。它们被保存在<code>res/anim/</code>文件夹下，通过<code>R.anim</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>color/</code></td>
+<td align="left">定义颜色状态列表的XML文件。它们被保存在res/color/文件夹下，通过<code>R.color</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>drawable/</code></td>
+<td align="left">图片文件，如<code>.png</code>,<code>.jpg</code>,<code>.gif</code>或者<code>XML</code>文件，被编译为位图、状态列表、形状、动画图片。它们被保存在<code>res/drawable/</code>文件夹下，通过<code>R.drawable</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>layout/</code></td>
+<td align="left">定义用户界面布局的XML文件。它们被保存在res/layout/文件夹下，通过<code>R.layout</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>menu/</code></td>
+<td align="left">定义应用程序菜单的XML文件，如选项菜单，上下文菜单，子菜单等。它们被保存在<code>res/menu/</code>文件夹下，通过<code>R.menu</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>raw/</code></td>
+<td align="left">任意的文件以它们的原始形式保存。需要根据名为<code>R.raw.filename</code>的资源ID，通过调用<code>Resource.openRawResource()</code>来打开<code>raw</code>文件</td>
+</tr>
+<tr>
+<td align="left"><code>values/</code></td>
+<td align="left">包含简单值(如字符串，整数，颜色等)的XML文件。这里有一些文件夹下的资源命名规范。arrays.xml代表数组资源，通过<code>R.array</code>类访问；<code>integers.xml</code>代表整数资源，通过<code>R.integer</code>类访问；<code>bools.xml</code>代表布尔值资源，通过<code>R.bool</code>类访问；<code>colors.xml</code>代表颜色资源，通过<code>R.color</code>类访问；<code>dimens.xml</code>代表维度值，通过<code>R.dimen</code>类访问；<code>strings.xml</code>代表字符串资源，通过<code>R.string</code>类访问；<code>styles.xml</code>代表样式资源，通过<code>R.style</code>类访问</td>
+</tr>
+<tr>
+<td align="left"><code>xml/</code></td>
+<td align="left">可以通过调用<code>Resources.getXML()</code>来在运行时读取任意的XML文件。可以在这里保存运行时使用的各种配置文件</td>
+</tr>
+<tr>
+<td align="left"><code>minmap/</code></td>
+<td align="left">保存应用的图标</td>
+</tr>
+</tbody></table>
+<h1 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h1><h2 id="配置资源"><a href="#配置资源" class="headerlink" title="配置资源"></a>配置资源</h2><p>例如：将以下图片下载并命名为<code>skyone.png</code></p>
+<img src="https://tc.skyone.host/blog/post/Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90/skyone.png" alt="skyone" style="zoom: 10%;" />
+
+<p>移动到<code>res/drawable/</code>文件夹下，在<code>activity_main.xml</code>中加入<code>ImageView</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">        android:id=&quot;@+id/imageView&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;180dp&quot;</span><br><span class="line">        android:contentDescription=&quot;@string/img_skyone&quot;</span><br><span class="line">        app:layout_constraintEnd_toEndOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintStart_toStartOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintTop_toTopOf=&quot;parent&quot;</span><br><span class="line">        app:srcCompat=&quot;@drawable/skyone&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>res/values/strings.xml</code>中加入：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;img_skyone&quot;</span>&gt;</span>Skyone<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>连接手机，编译运行。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>activity_main.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">&quot;.MainActivity&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;ImageView</span><br><span class="line">        android:id=&quot;@+id/imageView&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;180dp&quot;</span><br><span class="line">        android:contentDescription=&quot;@string/img_skyone&quot;</span><br><span class="line">        app:layout_constraintEnd_toEndOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintStart_toStartOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintTop_toTopOf=&quot;parent&quot;</span><br><span class="line">        app:srcCompat=&quot;@drawable/skyone&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/button&quot;</span><br><span class="line">        android:layout_width=&quot;100dp&quot;</span><br><span class="line">        android:layout_height=&quot;100dp&quot;</span><br><span class="line">        android:background=&quot;#FFFFFF&quot;</span><br><span class="line">        android:onClick=&quot;onClickButton&quot;</span><br><span class="line">        android:text=&quot;@string/button&quot;</span><br><span class="line">        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintEnd_toEndOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintStart_toStartOf=&quot;parent&quot;</span><br><span class="line">        app:layout_constraintTop_toBottomOf=&quot;@+id/imageView&quot; /&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>MainActivity.java</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> host.skyone.resource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> androidx.appcompat.app.AppCompatActivity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClickButton</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">&quot;欢迎访问Skyone哦！&quot;</span> , Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>strings.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;app_name&quot;</span>&gt;</span>Resource<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;img_skyone&quot;</span>&gt;</span>Skyone<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;button&quot;</span>&gt;</span>点我~^_^~<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>AndroidManifest.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">&quot;host.skyone.resource&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/Theme.Resource&quot;&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">&quot;.MainActivity&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>例图：</p>
+<img src="https://tc.skyone.host/blog/post/Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90/pre.png" alt="例图" style="zoom:20%;" />]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux下安装Python3</title>
     <url>/2021/01/12/linux-xia-an-zhuang-python3/</url>
     <content><![CDATA[<h1 id="Linux下安装Python3"><a href="#Linux下安装Python3" class="headerlink" title="Linux下安装Python3"></a>Linux下安装Python3</h1><p>Linux里安装过多次Python，但依然不记得，今天来总结以下。</p>
 <p>先把命令列出来：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br><span class="line">tar -zxvf ./Python-3.7.9.tgz</span><br><span class="line">cd Python-3.7.9</span><br><span class="line">./configure -prefix=/usr/software/python3 # 这里是你的安装目录</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br><span class="line">tar -zxvf ./Python-3.7.9.tgz</span><br><span class="line">cd Python-3.7.9</span><br><span class="line">./configure --prefix=/usr/software/python3 # 这里是你的安装目录</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
 <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>安装Python需要以下依赖，请确保已经全部安装</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
 <p>这些依赖我也不清楚T-T，总之不懂就运行以下命令：</p>
