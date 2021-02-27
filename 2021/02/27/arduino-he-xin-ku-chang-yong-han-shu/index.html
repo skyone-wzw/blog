@@ -10,8 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="技术博客,"> 
-    <meta name="description" content="技术博客,注意！以下内容中的 int 指代整型变量，但实际上整型变量也有所不同，例如 analogWrite() 函数的原型如下：
-1void analogWrite(uint8_t pin, int val,"> 
+    <meta name="description" content="技术博客,
+
+注意！以下内容中的 int 指代整型变量，但实际上整型变量也有所不同，例如 analogWrite() 函数的原型如下：
+1void analogWrite(uint8_t pin, int v,"> 
     <meta name="author" content="王志伟"> 
     <link rel="alternative" href="atom.xml" title="Skyone-Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -72,7 +74,9 @@
 
         </div>
         <div class="content markdown">
-            <p>注意！以下内容中的 <code>int</code> 指代整型变量，但实际上整型变量也有所不同，例如 <code>analogWrite()</code> 函数的原型如下：</p>
+            <iframe style="border:none;width:100%;height:100px;position:fixed;bottom:0;left:0;z-index:999;" src="https://music.luotianyi.space:19375/?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/黑凤梨%20-%20乐正绫.mp3|https://ooo.0x0.ooo/2021/02/18/oc3cD.jpg||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/黑凤梨%20-%20乐正绫.lrc"></iframe>
+
+<p>注意！以下内容中的 <code>int</code> 指代整型变量，但实际上整型变量也有所不同，例如 <code>analogWrite()</code> 函数的原型如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">analogWrite</span><span class="params">(<span class="keyword">uint8_t</span> pin, <span class="keyword">int</span> val)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>不必深究，只需要把它当成整形变量即可。</p>
 <h1 id="必备函数"><a href="#必备函数" class="headerlink" title="必备函数"></a>必备函数</h1><h2 id="setup"><a href="#setup" class="headerlink" title="setup()"></a><code>setup()</code></h2><p>Arduino通电或复位后，即会开始执行 <code>setup()</code> 函数中的程序，该函数只会执行一次。</p>
