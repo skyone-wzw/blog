@@ -74,7 +74,7 @@
 
         </div>
         <div class="content markdown">
-            <iframe style="border:none;width:100%;height:100px;position:fixed;bottom:0;left:0;z-index:90;" src="https://music.luotianyi.space:19375/?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/黑凤梨%20-%20乐正绫.mp3|https://ooo.0x0.ooo/2021/02/18/oc3cD.jpg||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/黑凤梨%20-%20乐正绫.lrc"></iframe>
+            <iframe style="border:none;width:100%;height:100px;" src="https://music.luotianyi.space:19375/?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/黑凤梨%20-%20乐正绫.mp3|https://ooo.0x0.ooo/2021/02/18/oc3cD.jpg||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/黑凤梨%20-%20乐正绫.lrc"></iframe>
 
 <p>注意！以下内容中的 <code>int</code> 指代整型变量，但实际上整型变量也有所不同，例如 <code>analogWrite()</code> 函数的原型如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">analogWrite</span><span class="params">(<span class="keyword">uint8_t</span> pin, <span class="keyword">int</span> val)</span></span>;</span><br></pre></td></tr></table></figure>
@@ -128,7 +128,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">digitalWrite(<span class="number">3</span>, HIGH); <span class="comment">// 设置 3 号引脚为 高电平</span></span><br><span class="line">digitalWrite(<span class="number">4</span>, HIGH); <span class="comment">// 设置 3 号引脚为 低电平</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">digitalWrite(<span class="number">3</span>, HIGH); <span class="comment">// 设置 3 号引脚为 高电平</span></span><br><span class="line">digitalWrite(<span class="number">4</span>, LOW); <span class="comment">// 设置 3 号引脚为 低电平</span></span><br></pre></td></tr></table></figure>
 <h2 id="digitalRead-pin"><a href="#digitalRead-pin" class="headerlink" title="digitalRead(pin)"></a><code>digitalRead(pin)</code></h2><p>读取指定引脚的电位，在此之前要保证该引脚已经 <code>pinMode</code> 过，且为输入模式</p>
 <h3 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><p><code>int pin</code></p>
@@ -148,7 +148,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 高电平</span></span><br><span class="line"><span class="keyword">int</span> state = digitalWrite(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = HIGH; 也就是 stats = 1;</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 高电平</span></span><br><span class="line"><span class="keyword">int</span> state = digitalRead(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = HIGH; 也就是 stats = 1;</span></span><br></pre></td></tr></table></figure>
 <h2 id="analogWrite-pin-value"><a href="#analogWrite-pin-value" class="headerlink" title="analogWrite(pin, value)"></a><code>analogWrite(pin, value)</code></h2><p>设定指定引脚的电位，在此之前要保证该引脚已经 <code>pinMode</code> 过，且为输出模式</p>
 <p>此外，还要保证该引脚支持模拟输出，也就是引脚旁边有一个波浪线。</p>
 <h3 id="参数-3"><a href="#参数-3" class="headerlink" title="参数"></a>参数</h3><ul>
@@ -159,7 +159,7 @@
 <p>指定电位的值，范围为 <code>0~255</code> ，从 0V 到 5V 成比例对应。</p>
 </li>
 </ul>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">digitalWrite(<span class="number">3</span>, <span class="number">0</span>);   <span class="comment">// 设置 3 号引脚为 0V</span></span><br><span class="line">digitalWrite(<span class="number">3</span>, <span class="number">255</span>); <span class="comment">// 设置 3 号引脚为 5V</span></span><br><span class="line">digitalWrite(<span class="number">3</span>, <span class="number">233</span>); <span class="comment">// 设置 3 号引脚为 (5 * 233 / 255)V</span></span><br></pre></td></tr></table></figure>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">analogWrite(<span class="number">3</span>, <span class="number">0</span>);   <span class="comment">// 设置 3 号引脚为 0V</span></span><br><span class="line">analogWrite(<span class="number">3</span>, <span class="number">255</span>); <span class="comment">// 设置 3 号引脚为 5V</span></span><br><span class="line">analogWrite(<span class="number">3</span>, <span class="number">233</span>); <span class="comment">// 设置 3 号引脚为 (5 * 233 / 255)V</span></span><br></pre></td></tr></table></figure>
 <h2 id="analogRead"><a href="#analogRead" class="headerlink" title="analogRead()"></a><code>analogRead()</code></h2><p>读取指定引脚的电位，在此之前要保证该引脚已经 <code>pinMode</code> 过，且为输入模式</p>
 <p>此外，还要保证该引脚支持模拟输入，在 Arduino Uno 里支持模拟输入的只有： <code>A0</code> ， <code>A1</code> ， <code>A2</code> ，<code>A3</code> ， <code>A4</code> ， <code>A5</code> 六个。</p>
 <h3 id="参数-4"><a href="#参数-4" class="headerlink" title="参数"></a>参数</h3><ul>
@@ -172,7 +172,7 @@
 <p>指定的引脚的电位，范围： <code>0~999</code> ，从 0V 到 5V 成比例对应。</p>
 </li>
 </ul>
-<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 3V</span></span><br><span class="line"><span class="keyword">int</span> state = digitalWrite(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = 3 * 1000 / 5;</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 3V</span></span><br><span class="line"><span class="keyword">int</span> state = analogRead(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = 3 * 1000 / 5;</span></span><br></pre></td></tr></table></figure>
 <h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><h2 id="delay-ms"><a href="#delay-ms" class="headerlink" title="delay(ms)"></a><code>delay(ms)</code></h2><p>程序停止一段时间</p>
 <h3 id="参数-5"><a href="#参数-5" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><p><code>unsigned long ms</code></p>
