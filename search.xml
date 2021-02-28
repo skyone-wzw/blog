@@ -131,7 +131,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">digitalWrite(<span class="number">3</span>, HIGH); <span class="comment">// 设置 3 号引脚为 高电平</span></span><br><span class="line">digitalWrite(<span class="number">4</span>, LOW); <span class="comment">// 设置 3 号引脚为 低电平</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">digitalWrite(<span class="number">3</span>, HIGH); <span class="comment">// 设置 3 号引脚为 高电平</span></span><br><span class="line">digitalWrite(<span class="number">4</span>, LOW);  <span class="comment">// 设置 4 号引脚为 低电平</span></span><br></pre></td></tr></table></figure>
 <h2 id="digitalRead-pin"><a href="#digitalRead-pin" class="headerlink" title="digitalRead(pin)"></a><code>digitalRead(pin)</code></h2><p>读取指定引脚的电位，在此之前要保证该引脚已经 <code>pinMode</code> 过，且为输入模式</p>
 <h3 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><p><code>int pin</code></p>
@@ -172,10 +172,10 @@
 </ul>
 <h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><ul>
 <li><p><code>int</code></p>
-<p>指定的引脚的电位，范围： <code>0~999</code> ，从 0V 到 5V 成比例对应。</p>
+<p>指定的引脚的电位，范围： <code>0~1023</code> ，从 0V 到 5V 成比例对应。</p>
 </li>
 </ul>
-<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 3V</span></span><br><span class="line"><span class="keyword">int</span> state = analogRead(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = 3 * 1000 / 5;</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假设 4 号引脚连接的是 3V</span></span><br><span class="line"><span class="keyword">int</span> state = analogRead(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// state = 3 * 1023 / 5;</span></span><br></pre></td></tr></table></figure>
 <h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><h2 id="delay-ms"><a href="#delay-ms" class="headerlink" title="delay(ms)"></a><code>delay(ms)</code></h2><p>程序停止一段时间</p>
 <h3 id="参数-5"><a href="#参数-5" class="headerlink" title="参数"></a>参数</h3><ul>
 <li><p><code>unsigned long ms</code></p>
