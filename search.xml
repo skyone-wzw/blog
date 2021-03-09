@@ -75,6 +75,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux下安装Python3</title>
+    <url>/2021/01/12/linux-xia-an-zhuang-python3/</url>
+    <content><![CDATA[<h1 id="Linux下安装Python3"><a href="#Linux下安装Python3" class="headerlink" title="Linux下安装Python3"></a>Linux下安装Python3</h1><p>Linux里安装过多次Python，但依然不记得，今天来总结以下。</p>
+<p>先把命令列出来：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br><span class="line">tar -zxvf ./Python-3.7.9.tgz</span><br><span class="line">cd Python-3.7.9</span><br><span class="line">./configure --prefix=/usr/software/python3 # 这里是你的安装目录</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>安装Python需要以下依赖，请确保已经全部安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+<p>这些依赖我也不清楚T-T，总之不懂就运行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum isntall zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
+<h2 id="下载并解压Python源码"><a href="#下载并解压Python源码" class="headerlink" title="下载并解压Python源码"></a>下载并解压Python源码</h2><p>前往<a href="https://www.python.org/downloads/">Python官网</a>，找到对应Python版本的下载链接，例如我要下载的是<a href="https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz">3.7.9版</a>的。</p>
+<p>注意应下载Gzip压缩后的源码<code>Gzipped source tarball</code>。</p>
+<p>切换的一个用于下载的目录（不是安装目录），然后使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br></pre></td></tr></table></figure>
+<p>如果显示没有<code>wget</code>可以使用以下命令安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install wget</span><br></pre></td></tr></table></figure>
+<p>解压源码也很简单，用<code>tar</code>解压：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf Python-3.7.9.tgz # 下载得到的文件，后缀tgz指的是tar gzip</span><br></pre></td></tr></table></figure>
+<p>然后进入解压得到的文件夹</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd Python-3.7.9</span><br></pre></td></tr></table></figure>
+<h2 id="编译-amp-安装"><a href="#编译-amp-安装" class="headerlink" title="编译&amp;安装"></a>编译&amp;安装</h2><p>创建一个文件夹用于安装Python，这个安装路径由你自己决定！例如我把它安装到<code>/usr/software/python3</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/software/python3</span><br></pre></td></tr></table></figure>
+<p>配置安装路径</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/software/python3</span><br></pre></td></tr></table></figure>
+<p>下面编译Python，使用make构建，这一步相对来说比较慢</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="创建软链"><a href="#创建软链" class="headerlink" title="创建软链"></a>创建软链</h2><p>所谓软链，在这里可以理解为快捷方式，分别为<code>python3</code>和<code>pip3</code>创建软链</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
+<p>注意！这里不能把软链命名为<code>python</code>和<code>pip</code>，因为大部分Linux系统自带python2.7，且部分功能要依靠python2.7，而执行python2.7和它的pip的命令是python和pip，所以这里用python3和pip3加以区分！</p>
+<hr>
+<p>OK，安装完成，使用以下命令检测一下吧~~~</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python3 -V # 大写的 V</span><br><span class="line">pip3 -V # 大写的 V</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Arduino核心库常用函数</title>
     <url>/2021/02/27/arduino-he-xin-ku-chang-yong-han-shu/</url>
     <content><![CDATA[<iframe style="border:none;width:100%;height:110px;" src="https://music.luotianyi.space:19375/?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/黑凤梨%20-%20乐正绫.mp3|https://ooo.0x0.ooo/2021/02/18/oc3cD.jpg||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/黑凤梨%20-%20乐正绫.lrc"></iframe>
@@ -409,48 +451,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux下安装Python3</title>
-    <url>/2021/01/12/linux-xia-an-zhuang-python3/</url>
-    <content><![CDATA[<h1 id="Linux下安装Python3"><a href="#Linux下安装Python3" class="headerlink" title="Linux下安装Python3"></a>Linux下安装Python3</h1><p>Linux里安装过多次Python，但依然不记得，今天来总结以下。</p>
-<p>先把命令列出来：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br><span class="line">tar -zxvf ./Python-3.7.9.tgz</span><br><span class="line">cd Python-3.7.9</span><br><span class="line">./configure --prefix=/usr/software/python3 # 这里是你的安装目录</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>安装Python需要以下依赖，请确保已经全部安装</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
-<p>这些依赖我也不清楚T-T，总之不懂就运行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum isntall zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
-<h2 id="下载并解压Python源码"><a href="#下载并解压Python源码" class="headerlink" title="下载并解压Python源码"></a>下载并解压Python源码</h2><p>前往<a href="https://www.python.org/downloads/">Python官网</a>，找到对应Python版本的下载链接，例如我要下载的是<a href="https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz">3.7.9版</a>的。</p>
-<p>注意应下载Gzip压缩后的源码<code>Gzipped source tarball</code>。</p>
-<p>切换的一个用于下载的目录（不是安装目录），然后使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz # 这里是对应版本的下载链接</span><br></pre></td></tr></table></figure>
-<p>如果显示没有<code>wget</code>可以使用以下命令安装：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install wget</span><br></pre></td></tr></table></figure>
-<p>解压源码也很简单，用<code>tar</code>解压：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf Python-3.7.9.tgz # 下载得到的文件，后缀tgz指的是tar gzip</span><br></pre></td></tr></table></figure>
-<p>然后进入解压得到的文件夹</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd Python-3.7.9</span><br></pre></td></tr></table></figure>
-<h2 id="编译-amp-安装"><a href="#编译-amp-安装" class="headerlink" title="编译&amp;安装"></a>编译&amp;安装</h2><p>创建一个文件夹用于安装Python，这个安装路径由你自己决定！例如我把它安装到<code>/usr/software/python3</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p /usr/software/python3</span><br></pre></td></tr></table></figure>
-<p>配置安装路径</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/software/python3</span><br></pre></td></tr></table></figure>
-<p>下面编译Python，使用make构建，这一步相对来说比较慢</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<p>安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
-<h2 id="创建软链"><a href="#创建软链" class="headerlink" title="创建软链"></a>创建软链</h2><p>所谓软链，在这里可以理解为快捷方式，分别为<code>python3</code>和<code>pip3</code>创建软链</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln -s /usr/software/python3/bin/python3 /usr/bin/</span><br><span class="line">ln -s /usr/software/python3/bin/pip3 /usr/bin/</span><br></pre></td></tr></table></figure>
-<p>注意！这里不能把软链命名为<code>python</code>和<code>pip</code>，因为大部分Linux系统自带python2.7，且部分功能要依靠python2.7，而执行python2.7和它的pip的命令是python和pip，所以这里用python3和pip3加以区分！</p>
-<hr>
-<p>OK，安装完成，使用以下命令检测一下吧~~~</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python3 -V # 大写的 V</span><br><span class="line">pip3 -V # 大写的 V</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux常见命令</title>
     <url>/2020/10/24/linux-chang-jian-ming-ling/</url>
     <content><![CDATA[<h1 id="Linux常见命令"><a href="#Linux常见命令" class="headerlink" title="Linux常见命令"></a>Linux常见命令</h1><h2 id="一-文件与目录"><a href="#一-文件与目录" class="headerlink" title="一.文件与目录"></a>一.文件与目录</h2><ul>
@@ -771,6 +771,30 @@
       </tags>
   </entry>
   <entry>
+    <title>一个简单的神经网络框架</title>
+    <url>/2020/11/14/yi-ge-jian-dan-de-shen-jing-wang-luo-kuang-jia/</url>
+    <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>这是一个基于python的最简单的神经网络框架，使用了<code>numpy</code>库，使用的是输入层 - 隐藏层 - 输出层的结构，每一层的节点数自可定义。原理图：</p>
+<p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png" alt="原理图"></p>
+<p>激活函数是经典的：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png" alt="激活函数"></p>
+<p>误差函数的斜率：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%AF%E5%B7%AE%E5%87%BD%E6%95%B0.png" alt="误差函数"></p>
+<p>使用矩阵简化运算：</p>
+<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" alt="矩阵运算"></p>
+<p>代码很短、很简单，但效果却还不错。</p>
+<p>输入层、隐藏层、输出层节点数分别784、100、10个，经过<code>MNIST手写数字数据集</code>的训练后，跑了10000个测试，手写数字识别准确率达到了95%左右。</p>
+<p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%86%E5%88%AB%E5%87%86%E7%A1%AE%E7%8E%87.png" alt="识别准确率"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">activate</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + numpy.exp(-x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetwork</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, inputnodes, hiddennodes, outputnodes, learningrate=<span class="number">0.3</span></span>):</span></span><br><span class="line">        <span class="comment"># set number of nodes in each input, hidden, output layer</span></span><br><span class="line">        <span class="comment"># 分别是：输入层、隐藏层、输出层的节点数</span></span><br><span class="line">        self.inodes = inputnodes</span><br><span class="line">        self.hnodes = hiddennodes</span><br><span class="line">        self.onodes = outputnodes</span><br><span class="line"></span><br><span class="line">        <span class="comment"># learning rate</span></span><br><span class="line">        <span class="comment"># 学习速率</span></span><br><span class="line">        self.lr = learningrate</span><br><span class="line"></span><br><span class="line">        <span class="comment"># weights</span></span><br><span class="line">        <span class="comment"># 使用正态分布初始化权重</span></span><br><span class="line">        self.wih = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.inodes, -<span class="number">0.5</span>), (self.hnodes, self.inodes))</span><br><span class="line">        self.who = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.hnodes, -<span class="number">0.5</span>), (self.onodes, self.hnodes))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self, inputs_list</span>):</span></span><br><span class="line">        <span class="comment"># 计算每个数字的概率</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 翻转矩阵</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">		<span class="comment"># 输入进隐藏层的数据与权重相乘</span></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line">		<span class="comment"># 输入进输出层的数据与权重相乘</span></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> final_outputs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self, inputs_list, targets_list</span>):</span></span><br><span class="line">        <span class="comment"># 误差计算函数</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">        targets = numpy.array(targets_list, ndmin=<span class="number">2</span>).T</span><br><span class="line"></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line"></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># errors</span></span><br><span class="line">        <span class="comment"># 误差值</span></span><br><span class="line">        output_errors = targets - final_outputs</span><br><span class="line">        hidden_errors = numpy.dot(self.who.T, output_errors)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.who += self.lr * numpy.dot((output_errors * final_outputs * (<span class="number">1.0</span> - final_outputs)), numpy.transpose(hidden_outputs))</span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (<span class="number">1.0</span> - hidden_outputs)), numpy.transpose(inputs))</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用阿里云函数计算免费创建自己的音乐播放器API</title>
     <url>/2021/03/06/shi-yong-a-li-yun-han-shu-ji-suan-mian-fei-chuang-jian-zi-ji-de-yin-le-bo-fang-qi-api/</url>
     <content><![CDATA[<iframe style="border: none; width: 100%; height: 110px" src="https://music.luotianyi.space:19375/?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/夜航星%20-%20洛天依.mp3|https://ooo.0x0.ooo/2021/02/14/o08AS.png||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/夜航星%20-%20洛天依.lrc"></iframe>
@@ -912,7 +936,7 @@
 <p>我们使用的流量小到几乎可以忽略不计。。。</p>
 <hr>
 <p>选择 <strong>服务及函数–&gt;新增服务</strong></p>
-<img src="F:\Blog\草稿\Server Less APlayer\新增服务.png" alt="新增服务" style="zoom: 50%;" />
+<img src="https://tc.skyone.host/blog/post/使用阿里云函数计算免费创建自己的音乐播放器API/新增服务.png" alt="新增服务" style="zoom: 50%;" />
 
 <ul>
 <li>服务名称：随意</li>
@@ -921,10 +945,10 @@
 <li>链路追踪不开启<del>我穷，没钱</del></li>
 </ul>
 <p>如果开启了绑定日志，可能会让你授权，点击确认即可。</p>
-<img src="F:\Blog\草稿\Server Less APlayer\新增服务-表单.png" alt="新增服务-表单" style="zoom: 50%;" />
+<img src="https://tc.skyone.host/blog/post/使用阿里云函数计算免费创建自己的音乐播放器API/新增服务-表单.png" alt="新增服务-表单" style="zoom: 50%;" />
 
 <p>然后<strong>新增函数–&gt;HTTP函数</strong></p>
-<img src="F:\Blog\草稿\Server Less APlayer\新增函数.png" alt="新增函数" style="zoom: 50%;" />
+<img src="https://tc.skyone.host/blog/post/使用阿里云函数计算免费创建自己的音乐播放器API/新增函数.png" alt="新增函数" style="zoom: 50%;" />
 
 <ul>
 <li>函数名：随意</li>
@@ -939,10 +963,10 @@
 <li>认证方式：<code>anonymous</code></li>
 <li>请求方式：改为<code>GET</code></li>
 </ul>
-<img src="F:\Blog\草稿\Server Less APlayer\新增函数-表单.png" alt="新增函数-表单" style="zoom: 50%;" />
+<img src="https://tc.skyone.host/blog/post/使用阿里云函数计算免费创建自己的音乐播放器API/新增函数-表单.png" alt="新增函数-表单" style="zoom: 50%;" />
 
 <p>进入该函数，选择触发器，复制链接</p>
-<img src="F:\Blog\草稿\Server Less APlayer\触发器链接.png" alt="触发器链接" style="zoom:50%;" />
+<img src="https://tc.skyone.host/blog/post/使用阿里云函数计算免费创建自己的音乐播放器API/触发器链接.png" alt="触发器链接" style="zoom:50%;" />
 
 <p>打开浏览器，粘贴链接，并在后面加上你的GET请求参数，我的例子可以用：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">?_=|https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/music/%E5%A4%9C%E8%88%AA%E6%98%9F%20-%20%E6%B4%9B%E5%A4%A9%E4%BE%9D.mp3|https://ooo.0x0.ooo/2021/02/14/o08AS.png||https://cdn.jsdelivr.net/gh/skyone-res/static@master/res/lrc/%E5%A4%9C%E8%88%AA%E6%98%9F%20-%20%E6%B4%9B%E5%A4%A9%E4%BE%9D.lrc</span><br></pre></td></tr></table></figure>
@@ -951,7 +975,7 @@
 <p>输入你的<strong>已经备案的</strong>域名，需要开启HTTPS的自行百度这么申请SSL证书</p>
 <p>路径填 <code>/</code> ，当然你懂的话自行修改</p>
 <p>选择函数为刚才创建的，LATEST版</p>
-<p>![自定义域名](F:\Blog\草稿\Server Less APlayer\自定义域名.png)</p>
+<p><img src="https://tc.skyone.host/blog/post/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E5%85%8D%E8%B4%B9%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8API/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.png" alt="自定义域名"></p>
 <p>点确定后，进入你的域名服务商的域名解析控制台，为你的主域名添加对应的子域名，选择CNAME模式，指向上图复制的链接。</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>打开如下网址</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;你的域名&#x2F;你的get请求参数</span><br></pre></td></tr></table></figure>
@@ -964,7 +988,7 @@
 <li>参数在<a href="#%E6%88%91%E7%9A%84API%E7%9A%84%E5%8F%82%E6%95%B0">这一段</a>有写</li>
 </ul>
 <p>例图：</p>
-<p><a href="https://www.skyone.host/2021/02/24/win10-xia-pei-zhi-shu-mei-pai-pico-de-micropython-yu-c-huan-jing/">![例图](F:\Blog\草稿\Server Less APlayer\例图.png)</a></p>
+<p><a href="https://www.skyone.host/2021/02/24/win10-xia-pei-zhi-shu-mei-pai-pico-de-micropython-yu-c-huan-jing/"><img src="https://tc.skyone.host/blog/post/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E5%85%8D%E8%B4%B9%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8API/%E4%BE%8B%E5%9B%BE.png" alt="例图"></a></p>
 <p><strong>注意：</strong>不保证我提供的示例会稳定运行，如果我发现有很多来自非我网站的调用，我会停止此API，<strong>所以，想要就自己动手，不要什么事都让被人给你做好！</strong></p>
 <p><span style="color:red;font-size:1.2em;">本文完全原创，禁止转载</span>，如果真的想转载，请<a href="mailto:wzw@skyone.host">邮箱联系我</a>。</p>
 ]]></content>
@@ -973,30 +997,6 @@
       </categories>
       <tags>
         <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个简单的神经网络框架</title>
-    <url>/2020/11/14/yi-ge-jian-dan-de-shen-jing-wang-luo-kuang-jia/</url>
-    <content><![CDATA[<h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>这是一个基于python的最简单的神经网络框架，使用了<code>numpy</code>库，使用的是输入层 - 隐藏层 - 输出层的结构，每一层的节点数自可定义。原理图：</p>
-<p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png" alt="原理图"></p>
-<p>激活函数是经典的：</p>
-<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0.png" alt="激活函数"></p>
-<p>误差函数的斜率：</p>
-<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%AF%E5%B7%AE%E5%87%BD%E6%95%B0.png" alt="误差函数"></p>
-<p>使用矩阵简化运算：</p>
-<p><img src="https://tc-1.oss-cn-hangzhou.aliyuncs.com/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97.png" alt="矩阵运算"></p>
-<p>代码很短、很简单，但效果却还不错。</p>
-<p>输入层、隐藏层、输出层节点数分别784、100、10个，经过<code>MNIST手写数字数据集</code>的训练后，跑了10000个测试，手写数字识别准确率达到了95%左右。</p>
-<p><img src="https://tc.skyone.host/blog/post/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A1%86%E6%9E%B6/%E8%AF%86%E5%88%AB%E5%87%86%E7%A1%AE%E7%8E%87.png" alt="识别准确率"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">activate</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + numpy.exp(-x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetwork</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, inputnodes, hiddennodes, outputnodes, learningrate=<span class="number">0.3</span></span>):</span></span><br><span class="line">        <span class="comment"># set number of nodes in each input, hidden, output layer</span></span><br><span class="line">        <span class="comment"># 分别是：输入层、隐藏层、输出层的节点数</span></span><br><span class="line">        self.inodes = inputnodes</span><br><span class="line">        self.hnodes = hiddennodes</span><br><span class="line">        self.onodes = outputnodes</span><br><span class="line"></span><br><span class="line">        <span class="comment"># learning rate</span></span><br><span class="line">        <span class="comment"># 学习速率</span></span><br><span class="line">        self.lr = learningrate</span><br><span class="line"></span><br><span class="line">        <span class="comment"># weights</span></span><br><span class="line">        <span class="comment"># 使用正态分布初始化权重</span></span><br><span class="line">        self.wih = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.inodes, -<span class="number">0.5</span>), (self.hnodes, self.inodes))</span><br><span class="line">        self.who = numpy.random.normal(<span class="number">0.0</span>, <span class="built_in">pow</span>(self.hnodes, -<span class="number">0.5</span>), (self.onodes, self.hnodes))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self, inputs_list</span>):</span></span><br><span class="line">        <span class="comment"># 计算每个数字的概率</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 翻转矩阵</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">		<span class="comment"># 输入进隐藏层的数据与权重相乘</span></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line">		<span class="comment"># 输入进输出层的数据与权重相乘</span></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        <span class="comment"># 激活函数</span></span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> final_outputs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self, inputs_list, targets_list</span>):</span></span><br><span class="line">        <span class="comment"># 误差计算函数</span></span><br><span class="line">        inputs = numpy.array(inputs_list, ndmin=<span class="number">2</span>).T</span><br><span class="line">        targets = numpy.array(targets_list, ndmin=<span class="number">2</span>).T</span><br><span class="line"></span><br><span class="line">        hidden_inputs = numpy.dot(self.wih, inputs)</span><br><span class="line">        hidden_outputs = activate(hidden_inputs)</span><br><span class="line"></span><br><span class="line">        final_inputs = numpy.dot(self.who, hidden_outputs)</span><br><span class="line">        final_outputs = activate(final_inputs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># errors</span></span><br><span class="line">        <span class="comment"># 误差值</span></span><br><span class="line">        output_errors = targets - final_outputs</span><br><span class="line">        hidden_errors = numpy.dot(self.who.T, output_errors)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.who += self.lr * numpy.dot((output_errors * final_outputs * (<span class="number">1.0</span> - final_outputs)), numpy.transpose(hidden_outputs))</span><br><span class="line">        <span class="comment"># update the weights for the links between the hidden and output layer</span></span><br><span class="line">        <span class="comment"># 根据误差调整权重</span></span><br><span class="line">        self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (<span class="number">1.0</span> - hidden_outputs)), numpy.transpose(inputs))</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>神经网络</tag>
       </tags>
   </entry>
   <entry>
