@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>几种特殊行列式的求值方法 - Skyone-Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="大学数学,线性代数,行列式,"> 
+    <meta name="description" content="Skyone技术博客,本文记录了八大常见类型的行列式及其解法，解法从一般性到特殊性都有，分享给大家，例子都特别经典好用，希望对线代、高代初学者以及考研党有用。"> 
+    <meta name="author" content="王志伟"> 
+    <link rel="alternative" href="atom.xml" title="Skyone-Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<!--
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+	 -->
+    <!-- 看板娘 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="/live2d-widget/autoload.js"></script>
+    <!-- MD5 -->
+    <script src="/js/md5.min.js"></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Skyone-Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://www.skyone.host"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">几种特殊行列式的求值方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">几种特殊行列式的求值方法</h1>
+        <div class="stuff">
+            <span>三月 11, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <blockquote>
+    <p>转载出处：</p>
+    <p>作者：超超超超超喜欢<br>链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34685081">https://zhuanlan.zhihu.com/p/34685081</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p><strong>类型总览：</strong></p>
+<ol>
+    <li>箭型行列式</li>
+    <li>两三角型行列式</li>
+    <li>两条线型行列式</li>
+    <li>范德蒙德型行列式</li>
+    <li>Hessenberg型行列式</li>
+    <li>三对角型行列式</li>
+    <li>各行元素和相等型行列式</li>
+    <li>相邻两行对应元素相差K倍型行列式</li>
+</ol>
+<p><strong>方法总览：</strong></p>
+<ol>
+    <li>拆行法</li>
+    <li>升阶法</li>
+    <li>方程组法</li>
+    <li>累加消点法</li>
+    <li>累加法</li>
+    <li>递推法（特征方程法）</li>
+    <li>步步差法</li>
+</ol>
+<h2 id="箭型行列式"><a href="#箭型行列式" class="headerlink" title="箭型行列式"></a>箭型行列式</h2><p>最常见最常用的行列式，特征很好辨识，必须掌握，请看下例：</p>
+<p>$$<br>eg:D_n= \left|\begin{array}{cccc} x_1&amp;1&amp;1 &amp;… &amp;1\\ 1&amp;x_2&amp;&amp;&amp;\\ 1&amp;&amp;x_3\\ …&amp;&amp;&amp;…\\ 1&amp;&amp;&amp;…&amp;x_n \end{array}\right|(空白处都为0)<br>$$</p>
+<p><strong>解法：</strong>将第一列元素依次减去第<code>i</code>列的<br>$$<br>\frac{1}{x_i},i=2…n<br>$$<br>得：</p>
+<p>$$<br>D_n= \left|\begin{array}{cccc} x_1-\frac{1}{x_2}-…-\frac{1}{x_n}&amp;1&amp;1 &amp;… &amp;1\\ 0&amp;x_2&amp;&amp;&amp;\\ 0&amp;&amp;x_3\\ …&amp;&amp;&amp;…\\ 0&amp;&amp;&amp;…&amp;x_n \end{array}\right|<br>$$</p>
+<p>所以：</p>
+<p>$$<br>D_n=\prod_{i=2}^{n}x_i(x_1-\sum_{i=2}^{n}\frac{1}{x_i})<br>$$</p>
+<h2 id="两三角型行列式"><a href="#两三角型行列式" class="headerlink" title="两三角型行列式"></a>两三角型行列式</h2><h3 id="拆行法"><a href="#拆行法" class="headerlink" title="拆行法"></a>拆行法</h3><p>特征为对角线上方元素均为<code>a</code> ,下方元素均为<code>b</code></p>
+<p>当<code>a=b</code>时可化为箭型行列式计算，当<code>a≠b</code>时采用<strong>拆行法</strong>计算，请看下面两例<br>$$<br>eg1(a=b):D_n=\left|\begin{array}{cccc} x_1&amp;b&amp;b &amp;… &amp;b\\ b&amp;x_2&amp;b&amp;…&amp;b\\ b&amp;b&amp;x_3&amp;…&amp;b\\ …&amp;…&amp;…&amp;…&amp;…\\ b&amp;b&amp;b&amp;…&amp;x_n \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>将第<code>i，i=2...n</code>行都减去第一行</p>
+<p>得：<br>$$<br>D_n=\left|\begin{array}{cccc} x_1&amp;b&amp;b &amp;… &amp;b\\ b-x_1&amp;x_2-b&amp;0&amp;…&amp;0\\ b-x_1&amp;0&amp;x_3-b&amp;…&amp;0\\ …&amp;…&amp;…&amp;…&amp;…\\ b-x_1&amp;0&amp;0&amp;…&amp;x_n-b \end{array}\right|<br>$$</p>
+<p>即化成了箭型行列式，所以：</p>
+<p>$$<br>D_n=[\prod_{i=2}^{n}(x_i-b)]\times[x_1-b(b-x_1)\sum_{i=2}^{n}\frac{1}{x_i-b}]<br>$$</p>
+<hr>
+<p>$$<br>eg2(a\not=b):D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;… &amp;a\\ b&amp;x_2&amp;a&amp;…&amp;a\\ b&amp;b&amp;x_3&amp;…&amp;a\\ …&amp;…&amp;…&amp;…&amp;…\\ b&amp;b&amp;b&amp;…&amp;x_n \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>采用拆行法，目的是为了降阶<br>$$<br>D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;… &amp;a+0\\ b&amp;x_2&amp;a&amp;…&amp;a+0\\ b&amp;b&amp;x_3&amp;…&amp;a+0\\ …&amp;…&amp;…&amp;…&amp;…\\ b&amp;b&amp;b&amp;…&amp;x_n+b-b \end{array}\right|<br>$$</p>
+<p>$$<br>D_n=\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;… &amp;a\\ b&amp;x_2&amp;a&amp;…&amp;a\\ b&amp;b&amp;x_3&amp;…&amp;a\\ …&amp;…&amp;…&amp;…&amp;…\\ b&amp;b&amp;b&amp;…&amp;b \end{array}\right|_{(*)}+\left|\begin{array}{cccc} x_1&amp;a&amp;a &amp;… &amp;0\\ b&amp;x_2&amp;a&amp;…&amp;0\\ b&amp;b&amp;x_3&amp;…&amp;0\\ …&amp;…&amp;…&amp;…&amp;…\\ b&amp;b&amp;b&amp;…&amp;x_n-b \end{array}\right|<br>$$</p>
+<p>将第<code>i,i=1...n-1</code>列都减去最后一列，得：</p>
+<p>$$<br>D_n=\left|\begin{array}{cccc} x_1-a&amp;0&amp;0 &amp;… &amp;a\\ b-a&amp;x_2-a&amp;0&amp;…&amp;a\\ b-a&amp;b-a&amp;x_3-a&amp;…&amp;a\\ …&amp;…&amp;…&amp;…&amp;…\\ 0&amp;0&amp;0&amp;…&amp;b \end{array}\right|+(x_n-b)D_{n-1}<br>$$</p>
+<p>所以：<br>$$<br>D_n=b\prod_{i=1}^{n-1}(x_i-a)+(x_n-b)D_{n-1}<br>$$</p>
+<p>再由行列式转置不变性得到：</p>
+<p>$$<br>D_n=a\prod_{i=1}^{n-1}(x_i-b)+(x_n-a)D_{n-1}<br>$$</p>
+<p>联立<code>(11)(12)</code>，得通式：</p>
+<p>$$<br>D_n=\frac{1}{a-b}[a\prod_{i=1}^{n}(x_i-b)-b\prod_{j=1}^{n}(x_j-a)]<br>$$</p>
+<h3 id="通过适当变换"><a href="#通过适当变换" class="headerlink" title="通过适当变换"></a>通过适当变换</h3><p>通过适当变换可以化为两三角型行列式的，描述不如大家自己看例子揣摩，也很容易理解的，请看下例<br>$$<br>eg3:D_n=\left|\begin{array}{cccc} d&amp;b&amp;b &amp;… &amp;b\\ c&amp;x&amp;a&amp;…&amp;a\\ c&amp;a&amp;x&amp;…&amp;a\\ …&amp;…&amp;…&amp;…&amp;…\\ c&amp;a&amp;a&amp;…&amp;x \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>将第一行乘上<br>$$<br>\frac{a}{b}<br>$$<br>第一列乘上<br>$$<br>\frac{a}{c}<br>$$<br>得：<br>$$<br>D_n=\frac{bc}{a^2}\left|\begin{array}{cccc} \frac{a^2d}{bc}&amp;a&amp;a &amp;… &amp;a\\ a&amp;x&amp;a&amp;…&amp;a\\ a&amp;a&amp;x&amp;…&amp;a\\ …&amp;…&amp;…&amp;…&amp;…\\ a&amp;a&amp;a&amp;…&amp;x \end{array}\right|<br>$$</p>
+<p>即化成了两三角型行列式</p>
+<h3 id="升阶法"><a href="#升阶法" class="headerlink" title="升阶法"></a>升阶法</h3><p>一些每行上有公因子但是无法向上式那样在保持行列式不变得基础上能提出公因子的，采用<strong>升阶法，</strong>请看下例<br>$$<br>eg4:D_n=\left|\begin{array}{cccc} 1+x_{1}^2&amp;x_1x_2&amp;x_1x_3 &amp;… &amp;x_1x_n\\ x_2x_1&amp;1+x_{2}^2&amp;x_2x_3&amp;…&amp;x_2x_n\\ x_3x_1&amp;x_3x_2&amp;1+x_{3}^2&amp;…&amp;x_3x_n\\ …&amp;…&amp;…&amp;…&amp;…\\ x_nx_1&amp;x_nx_2&amp;x_nx_3&amp;…&amp;1+x_{n}^2 \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>加边升阶，得：</p>
+<p>$$<br>D_n=\left|\begin{array}{cccc} 1&amp;x_1&amp;x_2&amp;x_3&amp;…&amp;x_n\\ 0&amp;1+x_{1}^2&amp;x_1x_2&amp;x_1x_3 &amp;… &amp;x_1x_n\\ 0&amp;x_2x_1&amp;1+x_{2}^2&amp;x_2x_3&amp;…&amp;x_2x_n\\ 0&amp;x_3x_1&amp;x_3x_2&amp;1+x_{3}^2&amp;…&amp;x_3x_n\\ 0&amp;…&amp;…&amp;…&amp;…&amp;…\\ 0&amp;x_nx_1&amp;x_nx_2&amp;x_nx_3&amp;…&amp;1+x_{n}^2 \end{array}\right|<br>$$</p>
+<p>再将第<br>$$<br>i,i=2…n+1<br>$$<br>行都减去第一行的<br>$$<br>x_i，i=1…n<br>$$<br>倍，得：<br>$$<br>D_n=\left|\begin{array}{cccc} 1&amp;x_1&amp;x_2&amp;x_3&amp;…&amp;x_n\\ -x_1&amp;1&amp;0&amp;0 &amp;… &amp;0\\ -x_2&amp;0&amp;1&amp;0&amp;…&amp;0\\ -x_3&amp;0&amp;0&amp;1&amp;…&amp;0\\ 0&amp;…&amp;…&amp;…&amp;…&amp;…\\ -x_n&amp;0&amp;0&amp;0&amp;…&amp;1 \end{array}\right|<br>$$</p>
+<p>即又化成了箭型行列式，可得通式：</p>
+<p>$$<br>D_n=1+\sum_{i=1}^{n}x_{i}^{2}<br>$$</p>
+<h2 id="两条线型行列式"><a href="#两条线型行列式" class="headerlink" title="两条线型行列式"></a>两条线型行列式</h2><p>特征是除了主(次)对角线或与其相邻得一条斜线所组成的任意一条线加四个顶点中的某个顶点外，其他元素均为0，这类行列式可以直接展开降阶。这段描述有点繁琐，但其实也并不复杂，请看下例理解</p>
+<p>$$<br>eg3:D_n=\left|\begin{array}{cccc} a_1&amp;b_1&amp; &amp;… &amp;\\ &amp;a_2&amp;b_2&amp;…&amp;\\ &amp;&amp;a_3&amp;…&amp;\\ &amp;&amp;&amp;\\ &amp;&amp;…&amp;a_{n-1}&amp;b_{n-1} \\ b_n&amp;&amp;…&amp;&amp;a_n \end{array}\right| (空白处都为0)<br>$$</p>
+<p><strong>解法：</strong>按照第一列两个非0元素拉普拉斯展开即可<br>$$<br>D_n=\prod_{i=1}^{n}a_i+(-1)^{n+1}\prod_{i=1}^{n}b_i<br>$$</p>
+<h2 id="范德蒙德型行列式"><a href="#范德蒙德型行列式" class="headerlink" title="范德蒙德型行列式"></a>范德蒙德型行列式</h2><p>范德蒙德行列式大家应该熟悉，而范德蒙德型行列式的特征就是有逐行(列)元素按幂递增(减)，可以将其转化为范德蒙德行列式来计算，请看下例</p>
+<p>$$<br>eg:D_n=\left|\begin{array}{cccc} a_{1}^n&amp; a_{1}^{n-1}b_1&amp;… &amp;a_1b_1^{n-1}&amp;b_1^n\\ a_{2}^n&amp;a_{2}^{n-1}b_2&amp;…&amp;a_2b_2^{n-1}&amp;b_2^n\\ …&amp;…&amp;…&amp;…&amp;…\\ a_{n}^n&amp;a_{n}^{n-1}b_n&amp;…&amp;a_nb_n^{n-1}&amp;b_n^n\\ a_{n+1}^n&amp;a_{n+1}^{n-1}b_{n+1}&amp;…&amp;a_{n+1}b_{n+1}^{n-1}&amp;b_{n+1}^n \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>将每行都提出<br>$$<br>a_i^{n},i=1…n+1<br>$$<br>倍，得：<br>$$<br>D_n=\prod_{i=1}^{n+1}a_i^n\left|\begin{array}{cccc} 1&amp; \frac{b_1}{a_1}&amp;… &amp;(\frac{b_1}{a_1})^{n-1}&amp;(\frac{b_1}{a_1})^{n}\\ 1&amp;\frac{b_2}{a_2}&amp;…&amp;(\frac{b_2}{a_2})^{n-1}&amp;(\frac{b_2}{a_2})^{n}\\ …&amp;…&amp;…&amp;…&amp;…\\ 1&amp;\frac{b_n}{a_n}&amp;…&amp;(\frac{b_n}{a_n})^{n-1}&amp;(\frac{b_n}{a_n})^{n}\\ 1&amp;\frac{b_{n+1}}{a_{n+1}}&amp;…&amp;(\frac{b_{n+1}}{a_{n+1}})^{n-1}&amp;(\frac{b_{n+1}}{a_{n+1}})^{n} \end{array}\right|<br>$$</p>
+<p>上式即为范德蒙德行列式，所以通式为：</p>
+<p>$$<br>D_n=\prod_{1\le i&lt;j\le n+1}(a_ib_j-b_ia_j)<br>$$</p>
+<h2 id="Hessenberg型行列式"><a href="#Hessenberg型行列式" class="headerlink" title="Hessenberg型行列式"></a>Hessenberg型行列式</h2><p>特征为除了主(次)对角线及与其相邻的斜线，再加上第一行(列)或第<code>n</code>行(列)外，其余元素均为$$0$$。这类行列式有点像前面说的两条线型行列式，但是还是有一点区别的。这类行列式都用<strong>累加消点法</strong>，即通常将某一行(列)都化简到只有一个非0元素，以便于降阶计算，请看下例</p>
+<p>$$<br>eg:D_n= \left|\begin{array}{cccc} 1&amp;2&amp;3 &amp;… &amp;n-1&amp;n\\ 1&amp;-1&amp;&amp;&amp;&amp;\\ &amp;2&amp;-2&amp;…\\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ &amp;&amp;&amp;n-2&amp;2-n&amp;\\ &amp;&amp;&amp;…&amp;n-1&amp;1-n \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>将各列都加到第一列，得到：</p>
+<p>$$<br>D_n= \left|\begin{array}{cccc} \frac{n(n+1)}{2}&amp;2&amp;3 &amp;… &amp;n-1&amp;n\\ 0&amp;-1&amp;&amp;&amp;&amp;\\ 0&amp;2&amp;-2&amp;…\\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ 0&amp;&amp;&amp;n-2&amp;2-n&amp;\\ 0&amp;&amp;&amp;…&amp;n-1&amp;1-n \end{array}\right|<br>$$</p>
+<p>降阶之后再重复上述步骤即可得到通式：</p>
+<p>$$<br>D_n=(-1)^{n-1}\frac{(n+1)!}{2}<br>$$</p>
+<p>注：需要说明的是，上面举的例子比较容易看出如何实施<strong>累加消点法</strong>就可以实现将某一行(列)都化简到只有一个非0元素从而达到降阶的目的，但是还有很多<code>Hessenberg</code>型行列式并不这么容易就做到，还需要大家找找技巧稍微变换一下，只要始终记得你要用<strong>累加消点法</strong>来消元来降阶就可以了 </p>
+<h2 id="三对角型行列式"><a href="#三对角型行列式" class="headerlink" title="三对角型行列式"></a>三对角型行列式</h2><p>这是一种递推结构的行列式，特征为所有主子式都有相同的结构，从而以最后一列展开，将所得的<code>(n-1)</code>阶行列式再展开即得递推公式，即**递推法(特征方程法)**，请看下例</p>
+<p>$$<br>eg:D_n= \left|\begin{array}{cccc} a&amp;b&amp; &amp;&amp;… &amp;&amp;&amp;\\ c&amp;a&amp;b&amp;&amp;…&amp;&amp;&amp;\\ &amp;c&amp;a&amp;b&amp;…&amp;&amp;\\ …&amp;…&amp;…&amp;…&amp;…&amp;\\ &amp;&amp;&amp;&amp;…&amp;a&amp;b\\ &amp;&amp;&amp;&amp;…&amp;c&amp;a \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>按第一列拉普拉斯展开，得：</p>
+<p>$$<br>D_n=aD_{n-1}-bcD_{n-2}<br>$$</p>
+<p>解特征方程：<br>$$<br>x^2=ax-bc<br>$$<br>得：<br>$$<br>x_1=\frac{a+\sqrt{a^2-4bc}}{2}<br>$$</p>
+<p>$$<br>x_2=\frac{a-\sqrt{a^2-4bc}}{2}<br>$$</p>
+<p>即可得通式：</p>
+<p>$$<br>D_n = \frac{x_1^{n+1}-x_2^{n+1}}{x_1-x_2}<br>$$</p>
+<blockquote>
+    <p> <strong>特征方程我会写一篇原创文章解释</strong></p>
+</blockquote>
+<h2 id="各行元素和相等型行列式"><a href="#各行元素和相等型行列式" class="headerlink" title="各行元素和相等型行列式"></a>各行元素和相等型行列式</h2><p>这个特征已经很清楚了吧，方法就是<strong>累加法</strong>，很简单，直接看下例</p>
+<p>$$<br>eg:D_n= \left|\begin{array}{cccc} 1+x_1&amp;x_1 &amp;… &amp;x_1\\ x_2&amp;1+x_2&amp;…&amp;x_2\\ …&amp;…&amp;…&amp;…\\ x_n&amp;x_n&amp;…&amp;1+x_n \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>将第<code>i,i=2...n</code>行都加到第一行去，得：</p>
+<p>$$<br>D_n= \left|\begin{array}{cccc} 1+\sum_{i=1}^{n}x_i&amp;1+\sum_{i=1}^{n}x_i &amp;… &amp;1+\sum_{i=1}^{n}x_i\\ x_2&amp;1+x_2&amp;…&amp;x_2\\ …&amp;…&amp;…&amp;…\\ x_n&amp;x_n&amp;…&amp;1+x_n \end{array}\right|<br>$$</p>
+<p>所以：</p>
+<p>$$<br>D_n= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&amp;1 &amp;… &amp;1\\ x_2&amp;1+x_2&amp;…&amp;x_2\\ …&amp;…&amp;…&amp;…\\ x_n&amp;x_n&amp;…&amp;1+x_n \end{array}\right|= (1+\sum_{i=1}^{n}x_i)\left|\begin{array}{cccc} 1&amp;0&amp;… &amp;0\\ x_2&amp;1&amp;…&amp;0\\ …&amp;…&amp;…&amp;…\\ x_n&amp;0&amp;…&amp;1 \end{array}\right|=1+\sum_{i=1}^{n}x_i<br>$$</p>
+<h2 id="相邻两行相差K倍型行列式"><a href="#相邻两行相差K倍型行列式" class="headerlink" title="相邻两行相差K倍型行列式"></a>相邻两行相差K倍型行列式</h2><p>这个要用<strong>步步差法</strong></p>
+<p>(1)大部分元素为数字，且相邻两行对应元素相差为1，采用逐步作差的方法，即可出现大量<br>$$<br>\pm1<br>$$<br>进而出现大量0</p>
+<p>(2)若相邻两行相差K倍，采用逐步作K倍差得方法，即可出现大量0元素</p>
+<p>请看下面两个例子</p>
+<p>$$<br>eg1:D_n= \left|\begin{array}{cccc} 0&amp;1&amp;2 &amp;…&amp;n-2 &amp;n-1\\ 1&amp;0&amp;1&amp;…&amp;n-3&amp;n-2\\ 2&amp;1&amp;0&amp;…&amp;n-4&amp;n-3\\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ n-2&amp;n-3&amp;n-4&amp;…&amp;0&amp;1\\ n-1&amp;n-2&amp;n-3&amp;…&amp;1&amp;0 \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>从第一行开始，依次用前一行减去后一行，得：</p>
+<p>$$<br>D_n= \left|\begin{array}{cccc} -1&amp;1&amp;1 &amp;…&amp;1 &amp;1\\ -1&amp;-1&amp;1&amp;…&amp;1&amp;1\\ -1&amp;-1&amp;-1&amp;…&amp;1&amp;1\\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ -1&amp;-1&amp;-1&amp;…&amp;-1&amp;1\\ n-1&amp;n-2&amp;n-3&amp;…&amp;1&amp;0 \end{array}\right|<br>$$</p>
+<p>再将第一列加到第<code>i,i=2...n</code>列，得：</p>
+<p>$$<br>D_n= \left|\begin{array}{cccc} -1&amp;0&amp;0&amp;…&amp;0&amp;0\\ -1&amp;-2&amp;0&amp;…&amp;0&amp;0\\ -1&amp;-2&amp;-2&amp;…&amp;0&amp;0\\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ -1&amp;-2&amp;-2&amp;…&amp;-2&amp;0\\ n-1&amp;2n-3&amp;2n-4&amp;…&amp;n&amp;n-1 \end{array}\right|=(-1)^{n-1}(-2)^{n-2}(n-1)<br>$$</p>
+<hr>
+<p>$$<br>eg2:D_n= \left|\begin{array}{cccc} 1&amp;a&amp;a^2 &amp;…&amp;a^{n-2} &amp;a^{n-1}\\ a^{n-1}&amp;1&amp;a&amp;…&amp;a^{n-3} &amp;a^{n-2} \\ a^{n-2} &amp;a^{n-1} &amp;1&amp;…&amp;a^{n-4} &amp;a^{n-3} \\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ a^2&amp;a^3&amp;a^4&amp;…&amp;1&amp;a\\ a&amp;a^2&amp;a^3&amp;…&amp;a^{n-1}&amp;1 \end{array}\right|<br>$$</p>
+<p><strong>解法：</strong>从第一行开始，依次用前一行加上后一行的<code>(-a)</code>倍，得：<br>$$<br>D_n= \left|\begin{array}{cccc} 1-a^n&amp;0&amp;0&amp;…&amp;0&amp;0\\ a^{n-1}&amp;1-a^n&amp;0&amp;…&amp;0 &amp;0\\ 0 &amp;0 &amp;1-a^n&amp;…&amp;0&amp;0 \\ …&amp;…&amp;…&amp;…&amp;…&amp;…\\ 0&amp;0&amp;0&amp;…&amp;1-a^n&amp;0\\ a&amp;a^2&amp;a^3&amp;…&amp;a^{n-1}&amp;1 \end{array}\right|<br>$$</p>
+<p>所以：</p>
+<p>$$<br>D_n=(1-a^n)^{n-1}<br>$$</p>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://tc.skyone.host/blog/music/%E6%B4%9B%E5%A4%A9%E4%BE%9D%20-%20%E5%A4%9C%E8%88%AA%E6%98%9F.flac'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://tc.skyone.host/blog/music/%E6%B4%9B%E5%A4%A9%E4%BE%9D%20-%20%E8%8C%89%E8%8E%89%E8%8A%B1.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='https://tc.skyone.host/blog/music/%E8%B5%A4%E7%BE%BD%20-%20%E4%B8%87%E5%8F%A4%E7%94%9F%E9%A6%99.flac'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='https://tc.skyone.host/blog/music/%E6%B4%9B%E5%A4%A9%E4%BE%9D%20-%20%E4%B8%BA%E8%B0%81%E8%80%8C%E4%B8%BA.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='https://tc.skyone.host/blog/music/%E4%B9%90%E6%AD%A3%E7%BB%AB%20-%20Faded.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='https://tc.skyone.host/blog/music/bilibili2018%20-%20%E8%87%B3%E5%B0%8A%E9%A9%AC%E7%94%B2.flac'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='d5e197ef955b7f3268e5'
+        data-cs='7d4feed7a179ad28943b0865b7970814073145ad'
+        data-r='blog-gitalk'
+        data-o='skyone-wzw'
+        data-a='skyone-wzw'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">箭型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%89%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">两三角型行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E8%A1%8C%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">拆行法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E9%80%82%E5%BD%93%E5%8F%98%E6%8D%A2"><span class="toc-number">2.2.</span> <span class="toc-text">通过适当变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E9%98%B6%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">升阶法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E6%9D%A1%E7%BA%BF%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">两条线型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">范德蒙德型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hessenberg%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">Hessenberg型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%AF%B9%E8%A7%92%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">6.</span> <span class="toc-text">三对角型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E8%A1%8C%E5%85%83%E7%B4%A0%E5%92%8C%E7%9B%B8%E7%AD%89%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">各行元素和相等型行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%82%BB%E4%B8%A4%E8%A1%8C%E7%9B%B8%E5%B7%AEK%E5%80%8D%E5%9E%8B%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">相邻两行相差K倍型行列式</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+
+</html>
