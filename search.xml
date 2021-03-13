@@ -1119,6 +1119,97 @@
       </tags>
   </entry>
   <entry>
+    <title>求数列通项的特征根法</title>
+    <url>/2021/03/14/qiu-shu-lie-tong-xiang-de-te-zheng-gen-fa/</url>
+    <content><![CDATA[<blockquote>
+<p><em>黑色的方块鼠标或手指移到那里就会显示了哦。</em></p>
+</blockquote>
+<p>在上一篇文章中提到过数列二阶线性递推的特征根法，这篇文章来详细介绍一下。</p>
+<p>其实，高中就有这个内容，别不承认，在选修4-1中。我一个高中同学就经常和我提，但我一窍不通。<del>可能我上的假高中。</del>好了，进入正题。</p>
+<h2 id="二阶线性递推求通项"><a href="#二阶线性递推求通项" class="headerlink" title="二阶线性递推求通项"></a>二阶线性递推求通项</h2><h3 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h3><p>已知数列的前两项<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_1,x_2" alt="数学公式">和递推公式<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_{n%2B1}=px_n%2Bqx_{n-1}" alt="数学公式">，求数列<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\{x_n\}" alt="数学公式">的通项。</p>
+<p>怎么开始呢，我们可以使用待定系数法构造公比为<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=b" alt="数学公式">的等比数列<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\{x_{n%2B1}-ax_n\}" alt="数学公式"></p>
+<p>设：</p>
+<img src="https://www.zhihu.com/equation?tex=x_{n%2B1}-ax_n=b(x_n-ax_{n-1})" alt="数学公式">
+
+<p>移项，合并同类项：</p>
+<img src="https://www.zhihu.com/equation?tex=x_{n%2B1}=(a%2Bb)x_n-abx_{n-1}" alt="数学公式">
+
+<p>根据递推公式可得：</p>
+<img src="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5Cbegin%7Baligned%7D+%26a%2Bb%3Dp%5C%5C+%26ab%3D-q+%5Cend%7Baligned%7D+%5Cright." alt="数学公式">
+
+<p>好，下面重点来了，<strong>根据韦达定理反推解为a,b的方程</strong>：</p>
+<img src="https://www.zhihu.com/equation?tex=x^2-px-q=0" alt="数学公式">
+
+<p>嗯，这就是<strong>特征方程</strong>，是不是有点像解二阶线性常系数齐次微分方程用到的特征方程？</p>
+<p>那么，这个方程接出来之后有什么用呢？</p>
+<p>我们根据<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a" alt="数学公式">和<img style="display:inline-block;height:25px;" src="https://www.zhihu.com/equation?tex=b" alt="数学公式">的关系列出了方程，两个根因该就是<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a,b" alt="数学公式">的值，也就是说，我们可以认为<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a,b" alt="数学公式">是<strong>已知的常量</strong>。</p>
+<p>好现在回到那个我们构造的等比数列，根据等比数列常用的求通项方法：<strong>累乘法</strong>，可得：</p>
+<img src="https://www.zhihu.com/equation?tex=x_{n%2B1}-ax_n=b^{n-1}(x_2-ax_1)_{(1)}" alt="数学公式">
+
+<p>但是，请注意，这里的<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a" alt="数学公式">和<img style="display:inline-block;height:25px;" src="https://www.zhihu.com/equation?tex=b" alt="数学公式">分别对应特征方程的两个解，可是哪个对应哪个呢？</p>
+<p>答案是两种都有可能，<del>咳咳，不信你们直接解关于ab的方程，肯定有两组解</del></p>
+<p>总之，<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a" alt="数学公式">和<img style="display:inline-block;height:25px;" src="https://www.zhihu.com/equation?tex=b" alt="数学公式">对调，还有一个方程：</p>
+<img src="https://www.zhihu.com/equation?tex=x_{n%2B1}-bx_n=a^{n-1}(x_2-bx_1)_{(2)}" alt="数学公式">
+
+<p>联立(1)(2)解得：</p>
+<img src="https://www.zhihu.com/equation?tex=x_n=\frac{x_2-bx_1}{a-b}\cdot%20a^{n-1}%2B\frac{x_2-ax_1}{b-a}\cdot%20b^{n-1}" alt="数学公式">
+
+<p>注意，这里的<img style="display:inline-block;height:35px;" src="https://www.zhihu.com/equation?tex=\frac{x_2-bx_1}{a-b}" alt="数学公式">和<img style="display:inline-block;height:35px;" src="https://www.zhihu.com/equation?tex=\frac{x_2-ax_1}{b-a}" alt="数学公式">是<strong>常数</strong>，因此，我们下次使用时不需要这么麻烦的硬解，而是根据这里推出的解的样子再次使用<strong>待定系数法</strong></p>
+<p>设通项为：</p>
+<img src="https://www.zhihu.com/equation?tex=x_n=\alpha\cdot%20a^{n-1}%2B\beta\cdot%20b^{n-1}" alt="数学公式">
+
+<p>代入<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=n=1,n=2" alt="数学公式">：</p>
+<img src="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5Cbegin%7Baligned%7D+%26x_1%3D%5Calpha%2B%5Cbeta%5C%5C+%26x_2%3D%5Calpha%5Ccdot+a%2B%5Cbeta%5Ccdot+b%5Cend%7Baligned%7D+%5Cright." alt="数学公式">
+
+<p>解出<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\alpha,\beta" alt="数学公式">：</p>
+<img src="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5Cbegin%7Baligned%7D+%26%5Calpha+%3D%5Cfrac%7Bx_2-bx_1%7D%7Ba-b%7D%5C%5C+%26%5Cbeta+%3D%5Cfrac%7Bx_2-ax_1%7D%7Bb-a%7D+%5Cend%7Baligned%7D+%5Cright." alt="数学公式">
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>已知数列的前两项<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_1,x_2" alt="数学公式">和递推公式<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_{n%2B1}=px_n%2Bqx_{n-1}" alt="数学公式">，求数列<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\{x_n\}" alt="数学公式">的通项。</p>
+<ol>
+<li><p>解特征方程</p>
+ <img src="https://www.zhihu.com/equation?tex=x^2-px-q=0" alt="数学公式">
+
+<p> 得出<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=a" alt="数学公式">和<img style="display:inline-block;height:25px;" src="https://www.zhihu.com/equation?tex=b" alt="数学公式"></p>
+</li>
+<li><p>设通项为<img style="display:inline-block;height:35px;" src="https://www.zhihu.com/equation?tex=x_n=\alpha\cdot%20a^{n-1}%2B\beta\cdot%20b^{n-1}" alt="数学公式">并代入<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=n=1,n=2" alt="数学公式">解出<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\alpha,\beta" alt="数学公式">：</p>
+<img src="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5Cbegin%7Baligned%7D+%26x_1%3D%5Calpha%2B%5Cbeta%5C%5C+%26x_2%3D%5Calpha%5Ccdot+a%2B%5Cbeta%5Ccdot+b%5Cend%7Baligned%7D+%5Cright." alt="数学公式">
+
+<img src="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5Cbegin%7Baligned%7D+%26%5Calpha+%3D%5Cfrac%7Bx_2-bx_1%7D%7Ba-b%7D%5C%5C+%26%5Cbeta+%3D%5Cfrac%7Bx_2-ax_1%7D%7Bb-a%7D+%5Cend%7Baligned%7D+%5Cright." alt="数学公式">
+</li>
+<li><p>写出通项。</p>
+</li>
+</ol>
+<h2 id="例子：斐波那契数列"><a href="#例子：斐波那契数列" class="headerlink" title="例子：斐波那契数列"></a>例子：斐波那契数列</h2><p>已知数列的前两项<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_1=1,x_2=1" alt="数学公式">和递推公式<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_{n%2B1}=x_n%2Bx_{n-1}" alt="数学公式">，求数列<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=\{x_n\}" alt="数学公式">的通项。</p>
+<p>解特征方程：</p>
+<img src="https://www.zhihu.com/equation?tex=r^2-r-1=0" alt="数学公式">
+
+<img src="https://www.zhihu.com/equation?tex=r_1=\frac{1%2B\sqrt{5}}{2},r_1=\frac{1-\sqrt{5}}{2}" alt="数学公式">
+
+<p>设通项为：</p>
+<img src="https://www.zhihu.com/equation?tex=x_n=\alpha\cdot%20(\frac{1%2B\sqrt{5}}{2})^{n-1}%2B\beta\cdot%20(\frac{1%2B\sqrt{5}}{2})^{n-1}" alt="数学公式">
+
+<p>代入<img style="display:inline-block;height:20px;" src="https://www.zhihu.com/equation?tex=x_1=1,x_2=1" alt="数学公式">：</p>
+<img src="https://www.zhihu.com/equation?tex=\left\{\begin{array}{l}\alpha%2B\beta=1\\\frac{1%2B\sqrt5}{2}\cdot\alpha%2B\frac{1-\sqrt5}{2}\cdot\beta=1\end{array}\right." alt="数学公式">
+
+<p>解得：</p>
+<img src="https://www.zhihu.com/equation?tex=\left\{\begin{array}{l}\alpha=\frac{\sqrt5%2B5}{10}\\\beta=\frac{\sqrt5-5}{10}\end{array}\right." alt="数学公式">
+
+<p>因此：</p>
+<img src="https://www.zhihu.com/equation?tex=x_n=\frac{1}{\sqrt5}[(\frac{1%2B\sqrt5}{2})^2-\frac{1-\sqrt5}{2})^2]" alt="数学公式">
+
+<p>这个公式非常神奇，虽然看起来令人头皮发麻，但算出来居然每一项都是整数！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (((<span class="number">1</span>+sqrt(<span class="number">5</span>))/<span class="number">2</span>)**n-((<span class="number">1</span>-sqrt(<span class="number">5</span>))/<span class="number">2</span>)**n)/sqrt(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">15</span>):</span><br><span class="line">    print(f(i))</span><br></pre></td></tr></table></figure>
+<img src="https://tc.skyone.host/blog/post/%E6%B1%82%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9%E7%9A%84%E7%89%B9%E5%BE%81%E6%A0%B9%E6%B3%95/python.png" alt="python运行结果" style="zoom: 67%;" />
+
+]]></content>
+      <categories>
+        <category>原创教程</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用Arduino制作一个简易超声波测距仪</title>
     <url>/2021/02/22/yong-arduino-zhi-zuo-yi-ge-jian-yi-chao-sheng-bo-ce-ju-yi/</url>
     <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>用Arduino UNO开发板做一个简单的超声波测距仪</p>
